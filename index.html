@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iron Circle – A Brotherhood for Every Generation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@300;400;500&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --iron:#1a1a1a;--charcoal:#2d2d2d;--ember:#c0392b;--ember-light:#e74c3c;
+  --gold:#c9a84c;--warm-white:#f5f0e8;--cream:#faf7f2;--mid-gray:#6b6b6b;--light-gray:#e8e4dc;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--iron);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:rgba(26,26,26,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,0.2)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--warm-white);letter-spacing:0.12em}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.8rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.7);text-decoration:none;transition:color 0.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--ember);color:white;border:none;padding:0.6rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.3s}
+.nav-cta:hover{background:var(--ember-light)}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--iron);display:flex;align-items:center;position:relative;overflow:hidden;padding:8rem 3rem 5rem}
+.hero-texture{position:absolute;inset:0;background-image:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(192,57,43,0.12) 0%,transparent 70%),repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px)}
+.hero-circle-bg{position:absolute;right:-10vw;top:50%;transform:translateY(-50%);width:65vw;height:65vw;border-radius:50%;border:1px solid rgba(201,168,76,0.1);animation:rotateSlow 40s linear infinite}
+.hero-circle-bg::before{content:'';position:absolute;inset:12%;border-radius:50%;border:1px solid rgba(201,168,76,0.07)}
+.hero-circle-bg::after{content:'';position:absolute;inset:24%;border-radius:50%;border:1px solid rgba(201,168,76,0.05)}
+@keyframes rotateSlow{to{transform:translateY(-50%) rotate(360deg)}}
+.hero-content{position:relative;z-index:2;max-width:680px}
+.hero-tag{display:inline-block;font-size:0.72rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.4);padding:0.4rem 1rem;margin-bottom:2rem;animation:fadeUp 0.8s ease both}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,9vw,8rem);line-height:0.92;color:var(--warm-white);letter-spacing:0.03em;animation:fadeUp 0.8s ease 0.15s both}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-sub{margin-top:1.8rem;font-size:1.05rem;font-weight:300;color:rgba(245,240,232,0.65);line-height:1.7;max-width:480px;animation:fadeUp 0.8s ease 0.3s both}
+.hero-actions{display:flex;gap:1rem;margin-top:2.8rem;animation:fadeUp 0.8s ease 0.45s both}
+.btn-primary{background:var(--ember);color:white;border:none;cursor:pointer;padding:0.9rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s}
+.btn-primary:hover{background:var(--ember-light);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--warm-white);border:1px solid rgba(245,240,232,0.3);cursor:pointer;padding:0.9rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.08);animation:fadeUp 0.8s ease 0.6s both}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--gold);letter-spacing:0.05em}
+.stat-label{font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,240,232,0.45);margin-top:0.2rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTIONS */
+section{padding:6rem 3rem}
+.section-tag{font-size:0.72rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--ember);margin-bottom:1rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.1;color:var(--iron)}
+.section-title.light{color:var(--warm-white)}
+
+/* MISSION BAND */
+.mission-band{background:var(--charcoal);padding:3rem;display:flex;align-items:center;gap:4rem;overflow:hidden}
+.mission-band p{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.8rem);color:var(--warm-white);line-height:1.5;font-style:italic;flex:1;text-align:center}
+.mission-band p strong{color:var(--gold);font-style:normal}
+.mission-divider{width:2px;height:60px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);flex-shrink:0}
+
+/* CIRCLES */
+.circles-section{background:var(--cream);padding:6rem 3rem}
+.circles-header{text-align:center;margin-bottom:4rem}
+.circles-header p{font-size:1rem;color:var(--mid-gray);max-width:540px;margin:0 auto;line-height:1.7}
+.circles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:1200px;margin:0 auto}
+.circle-card{position:relative;padding:3.5rem 2.5rem;display:flex;flex-direction:column;min-height:520px;overflow:hidden;cursor:pointer;transition:transform 0.4s ease}
+.circle-card:hover{transform:translateY(-6px)}
+.card-elders{background:var(--iron)}.card-elders .card-accent{background:var(--gold)}.card-elders .card-age{color:var(--gold)}.card-elders .card-title{color:var(--warm-white)}.card-elders .card-desc{color:rgba(245,240,232,0.6)}.card-elders .card-features li{color:rgba(245,240,232,0.55)}.card-elders .card-features li::before{color:var(--gold)}.card-elders .card-btn{background:transparent;border:1px solid rgba(201,168,76,0.5);color:var(--gold)}.card-elders .card-btn:hover{background:var(--gold);color:var(--iron)}.card-elders .card-num{color:rgba(201,168,76,0.06)}
+.card-young{background:var(--warm-white)}.card-young .card-accent{background:var(--ember)}.card-young .card-age{color:var(--ember)}.card-young .card-title{color:var(--iron)}.card-young .card-desc{color:var(--mid-gray)}.card-young .card-features li{color:var(--mid-gray)}.card-young .card-features li::before{color:var(--ember)}.card-young .card-btn{background:var(--ember);border:1px solid var(--ember);color:white}.card-young .card-btn:hover{background:var(--ember-light)}.card-young .card-num{color:rgba(192,57,43,0.05)}
+.card-youth{background:var(--charcoal)}.card-youth .card-accent{background:#4a9eff}.card-youth .card-age{color:#4a9eff}.card-youth .card-title{color:var(--warm-white)}.card-youth .card-desc{color:rgba(245,240,232,0.6)}.card-youth .card-features li{color:rgba(245,240,232,0.55)}.card-youth .card-features li::before{color:#4a9eff}.card-youth .card-btn{background:transparent;border:1px solid rgba(74,158,255,0.5);color:#4a9eff}.card-youth .card-btn:hover{background:#4a9eff;color:white}.card-youth .card-num{color:rgba(74,158,255,0.05)}
+.card-accent-line{width:40px;height:3px;margin-bottom:2rem}
+.card-age{font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.2em;margin-bottom:0.6rem}
+.card-title{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;line-height:1.1;margin-bottom:1rem}
+.card-desc{font-size:0.9rem;line-height:1.7;margin-bottom:1.8rem;flex:1}
+.card-features{list-style:none;margin-bottom:2rem}
+.card-features li{font-size:0.82rem;padding:0.3rem 0;display:flex;align-items:center;gap:0.5rem}
+.card-features li::before{content:'→';font-size:0.75rem;flex-shrink:0}
+.card-btn{display:inline-block;padding:0.75rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;border:none;transition:all 0.3s;align-self:flex-start}
+.card-num{position:absolute;bottom:-1rem;right:1rem;font-family:'Bebas Neue',sans-serif;font-size:8rem;line-height:1;pointer-events:none;user-select:none}
+
+/* JOURNEY RIBBON */
+.journey-ribbon{width:100%;overflow:hidden;padding:0.85rem 0;margin:1.6rem 0 1.4rem;position:relative;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)}
+.card-young .journey-ribbon{border-color:rgba(26,26,26,0.12)}
+.ribbon-track{display:flex;width:max-content;animation:ribbonScroll 22s linear infinite}
+.ribbon-track.reverse{animation-direction:reverse;animation-duration:28s}
+@keyframes ribbonScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.journey-ribbon:hover .ribbon-track{animation-play-state:paused}
+.ribbon-item{display:inline-flex;align-items:center;gap:0.5rem;padding:0 1.4rem;white-space:nowrap;font-size:0.72rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;opacity:0.8}
+.ribbon-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.card-elders .ribbon-item{color:rgba(201,168,76,0.75)}.card-elders .ribbon-dot{background:var(--gold)}
+.card-young .ribbon-item{color:rgba(192,57,43,0.75)}.card-young .ribbon-dot{background:var(--ember)}
+.card-youth .ribbon-item{color:rgba(74,158,255,0.75)}.card-youth .ribbon-dot{background:#4a9eff}
+.journey-ribbon::before,.journey-ribbon::after{content:'';position:absolute;top:0;bottom:0;width:3rem;z-index:2;pointer-events:none}
+.journey-ribbon::before{left:0}.journey-ribbon::after{right:0}
+.card-elders .journey-ribbon::before{background:linear-gradient(to right,var(--iron),transparent)}.card-elders .journey-ribbon::after{background:linear-gradient(to left,var(--iron),transparent)}
+.card-young .journey-ribbon::before{background:linear-gradient(to right,var(--warm-white),transparent)}.card-young .journey-ribbon::after{background:linear-gradient(to left,var(--warm-white),transparent)}
+.card-youth .journey-ribbon::before{background:linear-gradient(to right,var(--charcoal),transparent)}.card-youth .journey-ribbon::after{background:linear-gradient(to left,var(--charcoal),transparent)}
+
+/* WHY */
+.why-section{background:var(--iron);padding:6rem 3rem}
+.why-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:center}
+.why-left .section-tag{color:var(--gold)}
+.why-left p{font-size:0.95rem;color:rgba(245,240,232,0.6);line-height:1.8;margin-bottom:1rem}
+.why-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1.5px}
+.pillar{background:var(--charcoal);padding:2rem 1.8rem;position:relative;overflow:hidden;transition:background 0.3s}
+.pillar:hover{background:#333}
+.pillar-icon{font-size:2rem;margin-bottom:1rem}
+.pillar h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--warm-white);margin-bottom:0.5rem}
+.pillar p{font-size:0.82rem;color:rgba(245,240,232,0.5);line-height:1.6}
+.pillar-bar{position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height 0.4s ease}
+.pillar:hover .pillar-bar{height:100%}
+
+/* EVENTS */
+.events-section{background:var(--cream);padding:6rem 3rem}
+.events-header{display:flex;align-items:flex-end;justify-content:space-between;max-width:1200px;margin:0 auto 3rem}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto}
+.event-card{background:white;border:1px solid var(--light-gray);padding:1.8rem;position:relative;transition:all 0.3s}
+.event-card:hover{border-color:var(--ember);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+.event-tag{display:inline-block;font-size:0.65rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;padding:0.25rem 0.6rem;margin-bottom:1.2rem}
+.tag-men{background:rgba(201,168,76,0.12);color:var(--gold)}.tag-young{background:rgba(192,57,43,0.1);color:var(--ember)}.tag-youth{background:rgba(74,158,255,0.1);color:#4a9eff}
+.event-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--iron);margin-bottom:0.5rem}
+.event-card p{font-size:0.85rem;color:var(--mid-gray);line-height:1.6;margin-bottom:1.2rem}
+.event-meta{display:flex;gap:1.2rem;font-size:0.75rem;color:var(--mid-gray);border-top:1px solid var(--light-gray);padding-top:1rem}
+
+/* JOIN */
+.join-section{background:var(--ember);padding:6rem 3rem;text-align:center;position:relative;overflow:hidden}
+.join-section::before{content:'IRON CIRCLE';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,18vw,16rem);color:rgba(255,255,255,0.05);white-space:nowrap;pointer-events:none;letter-spacing:0.1em}
+.join-section .section-tag{color:rgba(255,255,255,0.7)}
+.join-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6rem);color:white;letter-spacing:0.05em;line-height:1;margin-bottom:1.2rem;position:relative}
+.join-section p{font-size:1rem;color:rgba(255,255,255,0.8);max-width:480px;margin:0 auto 2.5rem;line-height:1.7;position:relative}
+.btn-white{background:white;color:var(--ember);border:none;cursor:pointer;padding:1rem 2.5rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;position:relative}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+
+/* TESTIMONIALS */
+.testimonials-section{background:var(--charcoal);padding:6rem 3rem}
+.testimonials-section .section-tag{color:var(--gold);text-align:center}
+.testimonials-section .section-title.light{text-align:center;margin-bottom:3rem}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}
+.test-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);padding:2rem}
+.test-quote{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:rgba(245,240,232,0.8);line-height:1.7;margin-bottom:1.5rem}
+.test-author{display:flex;align-items:center;gap:0.8rem}
+.test-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem}
+.av-gold{background:rgba(201,168,76,0.2);color:var(--gold);border:1px solid rgba(201,168,76,0.3)}.av-red{background:rgba(192,57,43,0.2);color:var(--ember);border:1px solid rgba(192,57,43,0.3)}.av-blue{background:rgba(74,158,255,0.2);color:#4a9eff;border:1px solid rgba(74,158,255,0.3)}
+.test-name{font-size:0.82rem;font-weight:500;color:var(--warm-white)}
+.test-circle-label{font-size:0.7rem;color:rgba(245,240,232,0.4);letter-spacing:0.1em}
+
+/* CONTACT */
+.contact-section{background:var(--iron);padding:6rem 3rem}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}
+.contact-left .section-tag{color:var(--gold)}
+.contact-intro{font-size:0.95rem;color:rgba(245,240,232,0.6);line-height:1.8;margin-bottom:2.5rem}
+.contact-details{display:flex;flex-direction:column;gap:1.2rem;margin-bottom:2.5rem}
+.contact-detail-item{display:flex;align-items:flex-start;gap:1rem}
+.contact-detail-icon{font-size:1.1rem;margin-top:0.1rem}
+.contact-detail-label{font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.35);margin-bottom:0.2rem}
+.contact-detail-value{font-size:0.9rem;color:var(--warm-white)}
+.contact-circles-key{display:flex;flex-direction:column;gap:0.8rem;padding:1.5rem;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.03)}
+.circle-key-item{display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;color:rgba(245,240,232,0.6)}
+.circle-key-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.dot-gold{background:var(--gold)}.dot-red{background:var(--ember)}.dot-blue{background:#4a9eff}
+.contact-form-box{background:var(--charcoal);padding:2.8rem;border:1px solid rgba(255,255,255,0.07);min-height:480px;display:flex;flex-direction:column}
+
+/* FORM */
+.form-panel-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--warm-white);margin-bottom:0.4rem}
+.form-panel-sub{font-size:0.85rem;color:rgba(245,240,232,0.5);margin-bottom:1.8rem;line-height:1.6}
+.form-fields{display:flex;flex-direction:column;gap:1rem;margin-bottom:1.5rem;flex:1}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:0.4rem}
+.form-label{font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.45)}
+.form-input{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--warm-white);padding:0.75rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.3s;width:100%}
+.form-input::placeholder{color:rgba(245,240,232,0.25)}
+.form-input:focus{border-color:var(--gold)}
+.form-select{appearance:none;cursor:pointer}
+.form-select-wrapper{position:relative}
+.form-select-wrapper::after{content:'▾';position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:rgba(245,240,232,0.4);pointer-events:none}
+.form-textarea{min-height:100px;resize:vertical}
+.form-input option{background:var(--charcoal)}
+.form-submit-btn{background:var(--ember);color:white;border:none;cursor:pointer;padding:0.8rem 1.8rem;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;margin-top:auto}
+.form-submit-btn:hover{background:var(--ember-light)}
+.form-back-btn{background:transparent;color:rgba(245,240,232,0.45);border:1px solid rgba(255,255,255,0.1);cursor:pointer;padding:0.8rem 1.2rem;font-family:'DM Sans',sans-serif;font-size:0.8rem;letter-spacing:0.1em;transition:all 0.3s}
+.form-back-btn:hover{color:var(--warm-white);border-color:rgba(255,255,255,0.25)}
+.circle-select-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.6rem;margin-bottom:1.8rem}
+.circle-option{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:1.4rem 1rem;text-align:center;cursor:pointer;transition:all 0.25s}
+.circle-option:hover{border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.07)}
+.circle-option.selected-elders{border-color:var(--gold);background:rgba(201,168,76,0.1)}
+.circle-option.selected-rising{border-color:var(--ember);background:rgba(192,57,43,0.1)}
+.circle-option.selected-youth{border-color:#4a9eff;background:rgba(74,158,255,0.1)}
+.circle-option-age{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.05em;margin-bottom:0.3rem}
+.co-gold{color:var(--gold)}.co-red{color:var(--ember)}.co-blue{color:#4a9eff}
+.circle-option-name{font-size:0.82rem;font-weight:500;color:var(--warm-white);margin-bottom:0.2rem}
+.circle-option-desc{font-size:0.7rem;color:rgba(245,240,232,0.4);letter-spacing:0.05em}
+.req{color:var(--ember)}
+.field-error{font-size:0.72rem;color:#e74c3c;margin-top:0.2rem;min-height:1rem;display:block}
+.full-width-btn{width:100%;padding:1rem;font-size:0.85rem;margin-top:0.5rem}
+.form-privacy{font-size:0.72rem;color:rgba(245,240,232,0.3);text-align:center;margin-top:0.8rem}
+.success-icon{font-size:3rem;margin-bottom:1rem}
+.success-detail{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;margin-top:1rem;font-size:0.85rem;color:var(--gold);line-height:1.6}
+.hidden{display:none!important}
+
+/* BLOG */
+.blog-section{background:var(--cream);padding:6rem 3rem}
+.blog-header{display:flex;align-items:flex-end;justify-content:space-between;max-width:1200px;margin:0 auto 3rem}
+.blog-header-left .section-tag{margin-bottom:0.4rem}
+.btn-add-blog{display:flex;align-items:center;gap:0.5rem;background:var(--iron);color:var(--warm-white);border:none;cursor:pointer;padding:0.75rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;transition:background 0.3s}
+.btn-add-blog:hover{background:var(--charcoal)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto}
+.blog-card{background:white;border:1px solid var(--light-gray);display:flex;flex-direction:column;transition:all 0.3s;cursor:pointer}
+.blog-card:hover{border-color:var(--ember);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+.blog-card-top{height:6px}
+.blog-card-top.top-men{background:var(--gold)}.blog-card-top.top-young{background:var(--ember)}.blog-card-top.top-youth{background:#4a9eff}.blog-card-top.top-general{background:var(--charcoal)}
+.blog-card-body{padding:1.8rem;flex:1;display:flex;flex-direction:column}
+.blog-meta{display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem}
+.blog-circle-tag{font-size:0.62rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:0.2rem 0.55rem}
+.bct-men{background:rgba(201,168,76,0.12);color:var(--gold)}.bct-young{background:rgba(192,57,43,0.1);color:var(--ember)}.bct-youth{background:rgba(74,158,255,0.1);color:#4a9eff}.bct-general{background:rgba(45,45,45,0.08);color:var(--charcoal)}
+.blog-date{font-size:0.72rem;color:var(--mid-gray)}
+.blog-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--iron);margin-bottom:0.6rem;line-height:1.3}
+.blog-card p{font-size:0.85rem;color:var(--mid-gray);line-height:1.65;flex:1;margin-bottom:1.2rem}
+.blog-card-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--light-gray);padding-top:1rem}
+.blog-author{display:flex;align-items:center;gap:0.5rem}
+.blog-avatar{width:28px;height:28px;border-radius:50%;background:var(--light-gray);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:0.75rem;color:var(--mid-gray)}
+.blog-author-name{font-size:0.75rem;font-weight:500;color:var(--iron)}
+.blog-read-link{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ember);text-decoration:none}
+.blog-empty{grid-column:1/-1;text-align:center;padding:4rem 2rem;border:2px dashed var(--light-gray);color:var(--mid-gray)}
+
+/* FOOTER */
+footer{background:#111;padding:4rem 3rem 2rem}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.07)}
+.footer-brand .nav-logo{font-size:2rem;display:block;margin-bottom:1rem}
+.footer-brand p{font-size:0.85rem;color:rgba(245,240,232,0.4);line-height:1.7;max-width:260px}
+.footer-col h4{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:0.6rem}
+.footer-col a{font-size:0.85rem;color:rgba(245,240,232,0.45);text-decoration:none;transition:color 0.3s}
+.footer-col a:hover{color:var(--warm-white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:0.75rem;color:rgba(245,240,232,0.25)}
+.admin-trigger{background:none;border:1px solid rgba(255,255,255,0.12);cursor:pointer;font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.4);padding:0.4rem 0.9rem;transition:all 0.3s;font-family:'DM Sans',sans-serif}
+.admin-trigger:hover{color:var(--warm-white);border-color:rgba(255,255,255,0.3)}
+
+/* MODALS - BLOG */
+.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(10,10,10,0.85);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:var(--charcoal);width:100%;max-width:640px;max-height:90vh;overflow-y:auto;padding:2.5rem;transform:translateY(20px);transition:transform 0.3s;position:relative}
+.modal-overlay.open .modal-box{transform:translateY(0)}
+.modal-close{position:absolute;top:1.2rem;right:1.2rem;background:none;border:none;cursor:pointer;color:rgba(245,240,232,0.4);font-size:1.4rem;line-height:1;transition:color 0.3s}
+.modal-close:hover{color:var(--warm-white)}
+.modal-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--warm-white);margin-bottom:0.3rem}
+.modal-sub{font-size:0.82rem;color:rgba(245,240,232,0.45);margin-bottom:2rem}
+.modal-fields{display:flex;flex-direction:column;gap:1.1rem}
+.modal-fields .form-label{color:rgba(245,240,232,0.5)}
+.modal-fields .form-input{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);color:var(--warm-white)}
+.modal-fields .form-input:focus{border-color:var(--gold)}
+.modal-fields .form-input::placeholder{color:rgba(245,240,232,0.22)}
+.modal-fields .form-input option{background:var(--charcoal)}
+.modal-textarea{min-height:140px;resize:vertical}
+.modal-footer{margin-top:1.8rem;display:flex;gap:1rem}
+.modal-footer .form-submit-btn{flex:1;padding:0.9rem;margin-top:0}
+.modal-footer .form-back-btn{padding:0.9rem 1.2rem}
+
+/* BLOG READER */
+.reader-overlay{position:fixed;inset:0;z-index:600;background:var(--iron);overflow-y:auto;opacity:0;pointer-events:none;transition:opacity 0.35s}
+.reader-overlay.open{opacity:1;pointer-events:all}
+.reader-inner{max-width:740px;margin:0 auto;padding:5rem 2rem 4rem}
+.reader-back{display:inline-flex;align-items:center;gap:0.5rem;background:none;border:1px solid rgba(255,255,255,0.12);color:rgba(245,240,232,0.5);cursor:pointer;padding:0.5rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.1em;margin-bottom:2.5rem;transition:all 0.3s}
+.reader-back:hover{color:var(--warm-white);border-color:rgba(255,255,255,0.3)}
+.reader-circle-tag{display:inline-block;margin-bottom:1.2rem;font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:0.3rem 0.7rem}
+.reader-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--warm-white);line-height:1.15;margin-bottom:1rem}
+.reader-meta{display:flex;gap:1.5rem;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.8rem;color:rgba(245,240,232,0.4)}
+.reader-body{font-size:1rem;color:rgba(245,240,232,0.78);line-height:1.9;white-space:pre-wrap}
+
+/* ADMIN OVERLAY */
+.admin-overlay{position:fixed;inset:0;z-index:900;background:#0f0f0f;opacity:0;pointer-events:none;transition:opacity 0.35s;overflow-y:auto}
+.admin-overlay.open{opacity:1;pointer-events:all}
+.admin-login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem}
+.login-box{width:100%;max-width:420px;background:var(--charcoal);border:1px solid rgba(201,168,76,0.15);padding:3rem 2.5rem}
+.login-logo{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.12em;color:var(--warm-white);text-align:center;margin-bottom:0.3rem}
+.login-logo span{color:var(--gold)}
+.login-sub{text-align:center;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,240,232,0.3);margin-bottom:2.5rem}
+.login-fields{display:flex;flex-direction:column;gap:1.1rem;margin-bottom:1.5rem}
+.login-fields .form-label{color:rgba(245,240,232,0.45)}
+.login-fields .form-input{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:var(--warm-white)}
+.login-fields .form-input:focus{border-color:var(--gold)}
+.login-fields .form-input::placeholder{color:rgba(245,240,232,0.2)}
+.login-error{font-size:0.78rem;color:var(--ember);text-align:center;min-height:1.2rem;margin-bottom:0.5rem}
+.login-btn{width:100%;padding:0.9rem;background:var(--ember);color:white;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;transition:background 0.3s}
+.login-btn:hover{background:var(--ember-light)}
+.login-hint{text-align:center;font-size:0.7rem;color:rgba(245,240,232,0.2);margin-top:1.2rem}
+.admin-dashboard{display:none;min-height:100vh}
+.admin-dashboard.visible{display:block}
+.admin-topbar{position:sticky;top:0;z-index:10;background:#1a1a1a;border-bottom:1px solid rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem}
+.admin-topbar-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.12em;color:var(--warm-white)}
+.admin-topbar-logo span{color:var(--gold)}
+.admin-topbar-right{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
+.admin-badge{font-size:0.65rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;background:rgba(201,168,76,0.15);color:var(--gold);padding:0.3rem 0.7rem;border:1px solid rgba(201,168,76,0.25)}
+.admin-logout{background:none;border:1px solid rgba(255,255,255,0.12);color:rgba(245,240,232,0.5);cursor:pointer;padding:0.4rem 0.9rem;font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.3s}
+.admin-logout:hover{color:var(--warm-white);border-color:rgba(255,255,255,0.3)}
+.admin-body{padding:2.5rem;max-width:1200px;margin:0 auto}
+.admin-section-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--warm-white);margin-bottom:0.3rem}
+.admin-section-sub{font-size:0.82rem;color:rgba(245,240,232,0.35);margin-bottom:2rem}
+.admin-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);margin-bottom:2.5rem}
+.admin-stat{background:#1a1a1a;padding:1.4rem 1.6rem}
+.admin-stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:0.05em}
+.admin-stat-label{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.35);margin-top:0.2rem}
+.stat-c-gold{color:var(--gold)}.stat-c-red{color:var(--ember)}.stat-c-blue{color:#4a9eff}.stat-c-white{color:var(--warm-white)}
+.admin-new-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--ember);color:white;border:none;cursor:pointer;padding:0.7rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;transition:background 0.3s;margin-bottom:1.5rem}
+.admin-new-btn:hover{background:var(--ember-light)}
+.admin-table-wrap{overflow-x:auto}
+.admin-table{width:100%;border-collapse:collapse}
+.admin-table th{text-align:left;font-size:0.65rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,240,232,0.3);padding:0.7rem 1rem;border-bottom:1px solid rgba(255,255,255,0.07)}
+.admin-table td{padding:0.9rem 1rem;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.85rem;color:rgba(245,240,232,0.75);vertical-align:middle}
+.admin-table tr:hover td{background:rgba(255,255,255,0.02)}
+.admin-table .post-title{color:var(--warm-white);font-weight:500}
+.admin-actions{display:flex;gap:0.5rem;flex-wrap:wrap}
+.btn-edit{background:rgba(201,168,76,0.1);color:var(--gold);border:1px solid rgba(201,168,76,0.25);cursor:pointer;padding:0.35rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.3s}
+.btn-edit:hover{background:rgba(201,168,76,0.2)}
+.btn-delete{background:rgba(192,57,43,0.1);color:var(--ember);border:1px solid rgba(192,57,43,0.25);cursor:pointer;padding:0.35rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.3s}
+.btn-delete:hover{background:rgba(192,57,43,0.25)}
+.btn-allocate{background:rgba(74,158,255,0.1);color:#4a9eff;border:1px solid rgba(74,158,255,0.25);cursor:pointer;padding:0.35rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.3s}
+.btn-allocate:hover{background:rgba(74,158,255,0.2)}
+
+/* ADMIN TABS */
+.admin-tabs{display:flex;gap:0;background:#111;border-bottom:1px solid rgba(255,255,255,0.07);padding:0 2.5rem;overflow-x:auto}
+.admin-tab{background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,240,232,0.35);padding:1rem 1.5rem;border-bottom:2px solid transparent;transition:all 0.25s;margin-bottom:-1px;white-space:nowrap}
+.admin-tab:hover{color:rgba(245,240,232,0.7)}
+.admin-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.admin-tab-panel{display:block}
+.admin-tab-panel.hidden{display:none}
+
+/* CRM */
+.crm-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.crm-toolbar{display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap}
+.crm-search{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--warm-white);padding:0.6rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;width:200px;transition:border-color 0.3s}
+.crm-search:focus{border-color:var(--gold)}
+.crm-search::placeholder{color:rgba(245,240,232,0.25)}
+.crm-filter{padding:0.6rem 2rem 0.6rem 0.8rem!important;font-size:0.82rem!important}
+.status-badge{display:inline-block;padding:0.2rem 0.6rem;font-size:0.62rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase}
+.status-active{background:rgba(46,160,67,0.15);color:#3fb950;border:1px solid rgba(46,160,67,0.25)}
+.status-pending{background:rgba(201,168,76,0.12);color:var(--gold);border:1px solid rgba(201,168,76,0.25)}
+.status-inactive{background:rgba(255,255,255,0.06);color:rgba(245,240,232,0.35);border:1px solid rgba(255,255,255,0.1)}
+
+/* PROGRESS */
+.progress-list{display:flex;flex-direction:column;gap:1px}
+.progress-row{background:#1a1a1a;padding:1.4rem 1.8rem;display:flex;align-items:center;gap:1.5rem;transition:background 0.25s;cursor:pointer;flex-wrap:wrap}
+.progress-row:hover{background:#222}
+.progress-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem}
+.pa-gold{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.25)}
+.pa-red{background:rgba(192,57,43,0.15);color:var(--ember);border:1px solid rgba(192,57,43,0.25)}
+.pa-blue{background:rgba(74,158,255,0.15);color:#4a9eff;border:1px solid rgba(74,158,255,0.25)}
+.progress-info{flex:1;min-width:0}
+.progress-name{font-size:0.92rem;font-weight:500;color:var(--warm-white);margin-bottom:0.2rem}
+.progress-meta-row{display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap}
+.progress-mini-bars{display:flex;flex-direction:column;gap:0.35rem;min-width:180px}
+.mini-bar-row{display:flex;align-items:center;gap:0.5rem}
+.mini-bar-label{font-size:0.62rem;color:rgba(245,240,232,0.35);letter-spacing:0.08em;text-transform:uppercase;width:60px;flex-shrink:0}
+.mini-bar-track{flex:1;height:4px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden}
+.mini-bar-fill{height:100%;border-radius:2px;transition:width 0.5s ease}
+.fill-gold{background:var(--gold)}.fill-red{background:var(--ember)}.fill-blue{background:#4a9eff}
+.mini-bar-val{font-size:0.65rem;color:rgba(245,240,232,0.35);width:28px;text-align:right;flex-shrink:0}
+.progress-edit-btn{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(245,240,232,0.4);cursor:pointer;padding:0.4rem 0.9rem;font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.3s;flex-shrink:0}
+.progress-edit-btn:hover{color:var(--warm-white);border-color:rgba(255,255,255,0.3)}
+.progress-bars{display:flex;flex-direction:column;gap:1.2rem;margin:1.5rem 0}
+.progress-bar-group{display:flex;flex-direction:column;gap:0.4rem}
+.progress-bar-header{display:flex;justify-content:space-between;align-items:center}
+.progress-bar-label{font-size:0.72rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,232,0.5)}
+.progress-bar-val{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--warm-white)}
+.progress-bar-track{height:8px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden}
+.progress-bar-fill-ui{height:100%;border-radius:4px;transition:width 0.5s ease}
+input[type=range].progress-slider{-webkit-appearance:none;width:100%;height:6px;background:rgba(255,255,255,0.1);border-radius:3px;outline:none;margin-top:0.3rem}
+input[type=range].progress-slider::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--gold);cursor:pointer}
+.milestone-list{display:flex;flex-direction:column;gap:0.5rem}
+.milestone-item{display:flex;align-items:center;gap:0.7rem;padding:0.5rem 0.8rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07)}
+.milestone-check{width:16px;height:16px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);cursor:pointer;flex-shrink:0;transition:all 0.2s;display:flex;align-items:center;justify-content:center;font-size:0.6rem}
+.milestone-check.done{background:#3fb950;border-color:#3fb950;color:white}
+.milestone-text{flex:1;font-size:0.82rem;color:rgba(245,240,232,0.75)}
+.milestone-text.done{text-decoration:line-through;color:rgba(245,240,232,0.3)}
+.milestone-del{background:none;border:none;cursor:pointer;color:rgba(245,240,232,0.2);font-size:0.9rem;transition:color 0.2s}
+.milestone-del:hover{color:var(--ember)}
+.progress-empty{text-align:center;padding:3rem;color:rgba(245,240,232,0.25);font-size:0.9rem}
+
+/* NOTES */
+.note-list{display:flex;flex-direction:column;gap:0.8rem;margin-bottom:1rem;max-height:220px;overflow-y:auto}
+.note-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-left:3px solid var(--gold);padding:0.8rem 1rem;position:relative}
+.note-date{font-size:0.65rem;color:rgba(245,240,232,0.35);letter-spacing:0.1em;margin-bottom:0.3rem}
+.note-text{font-size:0.85rem;color:rgba(245,240,232,0.75);line-height:1.6}
+.note-del{position:absolute;top:0.5rem;right:0.6rem;background:none;border:none;cursor:pointer;color:rgba(245,240,232,0.15);font-size:0.8rem;transition:color 0.2s}
+.note-del:hover{color:var(--ember)}
+.note-add-row{display:flex;gap:0.6rem}
+.note-input{flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--warm-white);padding:0.65rem 0.9rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.3s;resize:none;min-height:60px}
+.note-input:focus{border-color:var(--gold)}
+.note-input::placeholder{color:rgba(245,240,232,0.25)}
+.note-add-btn{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);cursor:pointer;padding:0.6rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.3s;align-self:flex-end;white-space:nowrap}
+.note-add-btn:hover{background:rgba(201,168,76,0.25)}
+
+/* STAFF */
+.staff-profile-card{background:rgba(74,158,255,0.07);border:1px solid rgba(74,158,255,0.18);padding:1.5rem 2rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.staff-card-avatar{width:56px;height:56px;border-radius:50%;background:rgba(74,158,255,0.15);border:2px solid rgba(74,158,255,0.35);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#4a9eff;flex-shrink:0}
+.staff-card-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--warm-white);margin-bottom:0.3rem}
+.staff-card-meta{display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center}
+.staff-role-badge{font-size:0.65rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:0.2rem 0.6rem;background:rgba(74,158,255,0.15);color:#4a9eff;border:1px solid rgba(74,158,255,0.25)}
+.allocate-list{max-height:360px;overflow-y:auto;display:flex;flex-direction:column;gap:1px}
+.allocate-item{display:flex;align-items:center;gap:1rem;padding:0.9rem 1rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);cursor:pointer;transition:background 0.2s}
+.allocate-item:hover{background:rgba(255,255,255,0.07)}
+.allocate-item.selected{background:rgba(74,158,255,0.1);border-color:rgba(74,158,255,0.3)}
+.allocate-check{width:18px;height:18px;border-radius:3px;flex-shrink:0;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:white;transition:all 0.2s}
+.allocate-item.selected .allocate-check{background:#4a9eff;border-color:#4a9eff}
+.allocate-item-name{font-size:0.88rem;font-weight:500;color:var(--warm-white);flex:1}
+.allocate-item-meta{font-size:0.72rem;color:rgba(245,240,232,0.35)}
+.allocate-assigned-badge{font-size:0.62rem;padding:0.15rem 0.5rem;background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.2)}
+.allocate-empty{text-align:center;padding:2rem;color:rgba(245,240,232,0.25);font-size:0.85rem}
+.assigned-pill{display:inline-flex;align-items:center;gap:0.3rem;background:rgba(74,158,255,0.12);color:#4a9eff;border:1px solid rgba(74,158,255,0.2);font-size:0.65rem;padding:0.2rem 0.5rem;margin:0.1rem;letter-spacing:0.08em}
+
+/* ADMIN MODAL */
+.admin-modal-overlay{position:fixed;inset:0;z-index:950;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.admin-modal-overlay.open{opacity:1;pointer-events:all}
+.admin-modal-box{background:#222;width:100%;max-width:680px;max-height:92vh;overflow-y:auto;padding:2.5rem;position:relative;border:1px solid rgba(255,255,255,0.08);transform:translateY(16px);transition:transform 0.3s}
+.admin-modal-overlay.open .admin-modal-box{transform:translateY(0)}
+.admin-modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;color:rgba(245,240,232,0.35);font-size:1.3rem;transition:color 0.3s}
+.admin-modal-close:hover{color:var(--warm-white)}
+.admin-modal-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--warm-white);margin-bottom:0.3rem}
+.admin-modal-sub{font-size:0.8rem;color:rgba(245,240,232,0.35);margin-bottom:2rem}
+.admin-modal-fields{display:flex;flex-direction:column;gap:1rem}
+.admin-modal-fields .form-label{color:rgba(245,240,232,0.45)}
+.admin-modal-fields .form-input{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:var(--warm-white)}
+.admin-modal-fields .form-input:focus{border-color:var(--gold)}
+.admin-modal-fields .form-input::placeholder{color:rgba(245,240,232,0.2)}
+.admin-modal-fields .form-input option{background:#222}
+.admin-modal-footer{display:flex;gap:1rem;margin-top:1.8rem}
+.admin-modal-footer .form-submit-btn{flex:1;padding:0.85rem;margin-top:0}
+.admin-modal-footer .form-back-btn{padding:0.85rem 1.2rem}
+
+/* CONFIRM */
+.confirm-overlay{position:fixed;inset:0;z-index:960;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.25s}
+.confirm-overlay.open{opacity:1;pointer-events:all}
+.confirm-box{background:#222;padding:2.5rem;max-width:400px;width:100%;border:1px solid rgba(192,57,43,0.3);text-align:center;transform:scale(0.96);transition:transform 0.25s}
+.confirm-overlay.open .confirm-box{transform:scale(1)}
+.confirm-icon{font-size:2.5rem;margin-bottom:1rem}
+.confirm-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--warm-white);margin-bottom:0.5rem}
+.confirm-msg{font-size:0.85rem;color:rgba(245,240,232,0.5);margin-bottom:2rem;line-height:1.6}
+.confirm-btns{display:flex;gap:0.8rem;justify-content:center}
+.confirm-yes{background:var(--ember);color:white;border:none;cursor:pointer;padding:0.7rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;transition:background 0.3s}
+.confirm-yes:hover{background:var(--ember-light)}
+.confirm-no{background:none;color:rgba(245,240,232,0.5);border:1px solid rgba(255,255,255,0.12);cursor:pointer;padding:0.7rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.3s}
+.confirm-no:hover{color:var(--warm-white)}
+.admin-toast{position:fixed;bottom:2rem;right:2rem;z-index:999;background:var(--charcoal);color:var(--warm-white);padding:0.9rem 1.5rem;font-size:0.82rem;border-left:3px solid var(--gold);opacity:0;transform:translateY(10px);transition:all 0.35s;pointer-events:none;max-width:320px}
+.admin-toast.show{opacity:1;transform:translateY(0)}
+.admin-toast.toast-red{border-color:var(--ember)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* SECTION DIVIDER */
+.section-divider{height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,0.3),transparent);margin:0 3rem}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  .hero{padding:7rem 1.5rem 4rem}.hero h1{font-size:clamp(3.5rem,12vw,6rem)}
+  .circles-grid,.test-grid,.events-grid,.blog-grid,.why-pillars{grid-template-columns:1fr}
+  .why-inner,.contact-inner{grid-template-columns:1fr;gap:3rem}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+  section,.circles-section,.events-section,.blog-section,.why-section,.testimonials-section,.join-section,.contact-section{padding:4rem 1.5rem}
+  .mission-band{flex-direction:column;gap:2rem;padding:3rem 1.5rem;text-align:center}
+  .hero-stats{gap:2rem}.admin-stats{grid-template-columns:1fr 1fr}
+  .admin-body{padding:1.5rem}.admin-topbar{padding:1rem 1.5rem}
+  .circle-select-grid,.form-row{grid-template-columns:1fr}
+  .contact-form-box{padding:1.8rem}
+  .blog-header{flex-direction:column;align-items:flex-start;gap:1.2rem}
+  .progress-mini-bars{min-width:120px}
+  .admin-modal-box{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Iron<span>Circle</span></div>
+  <ul class="nav-links">
+    <li><a href="#circles">The Circles</a></li>
+    <li><a href="#why">Our Mission</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#join">Join</a></li>
+    <li><a href="#blog">Blog</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Join Now</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-circle-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">A Brotherhood for Every Generation</div>
+    <h1>Forged in<br><em>Iron.</em><br>Bound by<br>Circle.</h1>
+    <p class="hero-sub">From boys becoming men to men shaping legacies — Iron Circle is a lifelong brotherhood built on strength, accountability, and unshakeable community.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('circles').scrollIntoView({behavior:'smooth'})">Find Your Circle</button>
+      <button class="btn-outline" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Our Story</button>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">3</div><div class="stat-label">Life Stages</div></div>
+      <div><div class="stat-num">500+</div><div class="stat-label">Brothers</div></div>
+      <div><div class="stat-num">150+</div><div class="stat-label">Events / Year</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION BAND -->
+<div class="mission-band" style="position:relative;background:url('./assets/mission-bg.jpg') center center/cover no-repeat;padding:5rem 3rem;">
+  <div style="position:absolute;inset:0;background:rgba(10,10,10,0.72);z-index:0;"></div>
+  <p style="position:relative;z-index:1;">"Every boy needs a guide. Every young man needs a challenge. Every man needs a <strong>brotherhood</strong>."</p>
+  <div class="mission-divider" style="position:relative;z-index:1;"></div>
+  <p style="position:relative;z-index:1;font-family:'Satisfy',cursive;font-size:clamp(2.8rem,6.5vw,5.5rem);font-weight:400;font-style:normal;letter-spacing:0.02em;line-height:1.1;color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.9),0 0 40px rgba(0,0,0,0.6);">Iron <span style="color:var(--gold);text-shadow:0 2px 12px rgba(0,0,0,0.9);">Sharpens</span> Iron.</p>
+  <div class="mission-divider" style="position:relative;z-index:1;"></div>
+  <p style="position:relative;z-index:1;">"Iron Circle exists so no man walks any stage of life <strong>alone</strong>."</p>
+</div>
+
+<!-- THREE CIRCLES -->
+<section class="circles-section" id="circles">
+  <div class="circles-header reveal">
+    <div class="section-tag">The Three Circles</div>
+    <h2 class="section-title">Brotherhood at Every Stage</h2>
+    <p>One community. Three dedicated circles — each designed for where you are in life's journey, with programming, mentorship, and brotherhood built specifically for you.</p>
+  </div>
+  <div class="circles-grid">
+    <div class="circle-card card-elders reveal">
+      <div class="card-accent-line card-accent"></div>
+      <div class="card-age">30 & Over · The Elders Circle</div>
+      <h2 class="card-title">Men Who Lead</h2>
+      <p class="card-desc">You've built something — career, family, identity. Now it's time to go deeper. The Elders Circle is your sanctuary for real conversations, legacy-building, and the brotherhood serious men need.</p>
+      <div class="journey-ribbon"><div class="ribbon-track" id="ribbonElders"></div></div>
+      <ul class="card-features">
+        <li>Weekly brotherhood circles</li><li>Leadership & legacy workshops</li>
+        <li>Mental health & wellness sessions</li><li>Business & finance intensives</li>
+        <li>Mentorship of younger circles</li>
+      </ul>
+      <button class="card-btn" onclick="jumpToJoin('elders')">Enter the Circle →</button>
+      <div class="card-num">30+</div>
+    </div>
+    <div class="circle-card card-young reveal">
+      <div class="card-accent-line card-accent"></div>
+      <div class="card-age">18–29 · The Rising Circle</div>
+      <h2 class="card-title">Men in the Making</h2>
+      <p class="card-desc">You're figuring it out — identity, purpose, ambition. The Rising Circle gives young men the structure, mentorship, and community to grow fast and build right.</p>
+      <div class="journey-ribbon"><div class="ribbon-track reverse" id="ribbonRising"></div></div>
+      <ul class="card-features">
+        <li>Career & purpose coaching</li><li>Fitness & discipline bootcamps</li>
+        <li>Financial literacy programs</li><li>Peer accountability groups</li>
+        <li>Access to Elders Circle mentors</li>
+      </ul>
+      <button class="card-btn" onclick="jumpToJoin('rising')">Start Rising →</button>
+      <div class="card-num">18+</div>
+    </div>
+    <div class="circle-card card-youth reveal">
+      <div class="card-accent-line card-accent"></div>
+      <div class="card-age">7–17 · The Young Iron Circle</div>
+      <h2 class="card-title">Boys Becoming Men</h2>
+      <p class="card-desc">Young Iron gives boys aged 7–17 a safe space to learn what it means to be a man — through sport, character, respect, and positive role models.</p>
+      <div class="journey-ribbon"><div class="ribbon-track" id="ribbonYouth"></div></div>
+      <ul class="card-features">
+        <li>Character & values programmes</li><li>Sport & physical development</li>
+        <li>Confidence & communication skills</li><li>Anti-bullying & resilience training</li>
+        <li>Mentorship from Rising & Elders</li>
+      </ul>
+      <button class="card-btn" onclick="jumpToJoin('youth')">Build the Foundation →</button>
+      <div class="card-num">7+</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-section" id="why">
+  <div class="why-inner">
+    <div class="why-left reveal">
+      <div class="section-tag">Why Iron Circle</div>
+      <h2 class="section-title light">Strength Built<br>Across Generations</h2>
+      <p>Iron Circle was born from a simple belief: that men at every age are better when they stand together — passing strength down through the generations.</p>
+      <p>We build a living chain of brotherhood where elders guide the rising, and the rising inspire the young. The circle never breaks.</p>
+      <button class="btn-primary">Our Full Story</button>
+    </div>
+    <div class="why-pillars reveal">
+      <div class="pillar"><div class="pillar-bar"></div><div class="pillar-icon">🤝</div><h3>Accountability</h3><p>Brothers hold each other to a higher standard — with honesty, care, and no judgment.</p></div>
+      <div class="pillar"><div class="pillar-bar"></div><div class="pillar-icon">🛡️</div><h3>Mentorship</h3><p>Every man is both a student and a teacher. Wisdom flows both ways across the circles.</p></div>
+      <div class="pillar"><div class="pillar-bar"></div><div class="pillar-icon">🌱</div><h3>Growth</h3><p>Mental, physical, emotional — we develop whole men, not just successful ones.</p></div>
+      <div class="pillar"><div class="pillar-bar"></div><div class="pillar-icon">🔥</div><h3>Brotherhood</h3><p>Real connection. Genuine support. A circle that lasts a lifetime, not just a season.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events-section" id="events">
+  <div class="events-header reveal">
+    <div><div class="section-tag">Upcoming Events</div><h2 class="section-title">What's On</h2></div>
+    <button class="btn-primary">View All Events</button>
+  </div>
+  <div class="events-grid">
+    <div class="event-card reveal"><span class="event-tag tag-men">Elders Circle · 30+</span><h3>Legacy & Leadership Evening</h3><p>A curated dinner for senior brothers to discuss leadership, life lessons, and the men they're becoming.</p><div class="event-meta"><span>📅 Sat 16 May</span><span>🕖 7:00 PM</span><span>12 seats</span></div></div>
+    <div class="event-card reveal"><span class="event-tag tag-young">Rising Circle · 18–29</span><h3>Purpose & Career Intensive</h3><p>Half-day workshop helping young men map their career, define their values, and build their blueprint.</p><div class="event-meta"><span>📅 Sat 23 May</span><span>🕙 10:00 AM</span><span>20 seats</span></div></div>
+    <div class="event-card reveal"><span class="event-tag tag-youth">Young Iron · 7–17</span><h3>Saturday Morning Warriors</h3><p>Weekly physical training, team challenges, and character-building for young men aged 7–17.</p><div class="event-meta"><span>📅 Every Saturday</span><span>🕢 7:30 AM</span><span>Open to all</span></div></div>
+    <div class="event-card reveal"><span class="event-tag tag-men">Elders Circle · 30+</span><h3>The Iron Brotherhood Circle</h3><p>Our weekly safe space for men to speak truth, be heard, and support one another.</p><div class="event-meta"><span>📅 Every Tuesday</span><span>🕢 7:30 PM</span><span>Weekly</span></div></div>
+    <div class="event-card reveal"><span class="event-tag tag-young">Rising Circle · 18–29</span><h3>Fitness & Discipline Bootcamp</h3><p>Monthly outdoor bootcamp combining physical conditioning with mental resilience challenges.</p><div class="event-meta"><span>📅 Fri 30 May</span><span>🕔 5:00 AM</span><span>All levels</span></div></div>
+    <div class="event-card reveal"><span class="event-tag tag-youth">Young Iron · 7–17</span><h3>Mentorship Matchup Day</h3><p>Youth meet their Elders and Rising mentors for a day of activities and connection.</p><div class="event-meta"><span>📅 Sun 1 Jun</span><span>🕙 10:00 AM</span><span>Free entry</span></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-tag">Brotherhood Stories</div>
+  <h2 class="section-title light">What Brothers Say</h2>
+  <div class="test-grid">
+    <div class="test-card reveal"><p class="test-quote">"I've been in the Elders Circle for six months and it's changed how I show up as a father, a husband, and a man. This is what brotherhood should look like."</p><div class="test-author"><div class="test-avatar av-gold">MK</div><div><div class="test-name">Marcus K., 41</div><div class="test-circle-label">Elders Circle · 30+</div></div></div></div>
+    <div class="test-card reveal"><p class="test-quote">"Joining the Rising Circle at 22 was the best decision I made. I found direction, accountability, and real friends who actually want to see me win."</p><div class="test-author"><div class="test-avatar av-red">JL</div><div><div class="test-name">Jordan L., 24</div><div class="test-circle-label">Rising Circle · 18–29</div></div></div></div>
+    <div class="test-card reveal"><p class="test-quote">"My son has completely transformed since joining Young Iron. He's more confident, respectful, and motivated than I've ever seen him."</p><div class="test-author"><div class="test-avatar av-blue">TD</div><div><div class="test-name">Thomas D., father of Ryan, 14</div><div class="test-circle-label">Young Iron Circle · 7–17</div></div></div></div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="join-section" id="join">
+  <div class="section-tag">Ready to Begin</div>
+  <h2>Join Your Circle Today</h2>
+  <p>It doesn't matter where you are in life. What matters is that you take the first step. Your brotherhood is waiting.</p>
+  <button class="btn-white" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Find My Circle →</button>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title light">Take the<br>First Step.</h2>
+      <p class="contact-intro">Tell us about yourself and which circle you're interested in. One of our brothers will reach out personally within 48 hours.</p>
+      <div class="contact-details">
+        <div class="contact-detail-item"><div class="contact-detail-icon">📍</div><div><div class="contact-detail-label">Location</div><div class="contact-detail-value">Melbourne, Victoria, Australia</div></div></div>
+        <div class="contact-detail-item"><div class="contact-detail-icon">✉️</div><div><div class="contact-detail-label">Email</div><div class="contact-detail-value">brothers@ironcircle.com</div></div></div>
+        <div class="contact-detail-item"><div class="contact-detail-icon">💬</div><div><div class="contact-detail-label">WhatsApp</div><div class="contact-detail-value">0459 045 099</div></div></div>
+      </div>
+      <div class="contact-circles-key">
+        <div class="circle-key-item"><span class="circle-key-dot dot-gold"></span><span>Elders Circle — Men 30+</span></div>
+        <div class="circle-key-item"><span class="circle-key-dot dot-red"></span><span>Rising Circle — Ages 18–29</span></div>
+        <div class="circle-key-item"><span class="circle-key-dot dot-blue"></span><span>Young Iron — Ages 7–17</span></div>
+      </div>
+    </div>
+    <div class="contact-right reveal">
+      <div class="contact-form-box">
+        <div id="mainForm">
+          <h3 class="form-panel-title">Send a Join Request</h3>
+          <p class="form-panel-sub">Fill in your details below and we'll be in touch within 48 hours.</p>
+          <div class="form-fields">
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">First Name <span class="req">*</span></label><input class="form-input" type="text" id="firstName" placeholder="Your first name"><span class="field-error" id="err-firstName"></span></div>
+              <div class="form-group"><label class="form-label">Last Name <span class="req">*</span></label><input class="form-input" type="text" id="lastName" placeholder="Your last name"><span class="field-error" id="err-lastName"></span></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">Date of Birth <span class="req">*</span></label><input class="form-input" type="date" id="dob" style="color-scheme:dark"><span class="field-error" id="err-dob"></span></div>
+              <div class="form-group"><label class="form-label">Phone / WhatsApp</label><input class="form-input" type="tel" id="phone" placeholder="0459 045 099"></div>
+            </div>
+            <div class="form-group"><label class="form-label">Email Address <span class="req">*</span></label><input class="form-input" type="email" id="email" placeholder="your@email.com"><span class="field-error" id="err-email"></span></div>
+            <div class="form-group">
+              <label class="form-label">Which circle are you joining? <span class="req">*</span></label>
+              <span class="field-error" id="err-circle"></span>
+              <div class="circle-select-grid">
+                <div class="circle-option" data-circle="elders" onclick="selectCircle(this)"><div class="circle-option-age co-gold">30+</div><div class="circle-option-name">Elders Circle</div><div class="circle-option-desc">Men Who Lead</div></div>
+                <div class="circle-option" data-circle="rising" onclick="selectCircle(this)"><div class="circle-option-age co-red">18–29</div><div class="circle-option-name">Rising Circle</div><div class="circle-option-desc">Men in the Making</div></div>
+                <div class="circle-option" data-circle="youth" onclick="selectCircle(this)"><div class="circle-option-age co-blue">7–17</div><div class="circle-option-name">Young Iron</div><div class="circle-option-desc">Boys Becoming Men</div></div>
+              </div>
+            </div>
+            <div class="form-group"><label class="form-label">Your Message <span class="req">*</span></label><textarea class="form-input form-textarea" id="message" placeholder="Tell us what brought you here and what you're hoping to get from Iron Circle..."></textarea><span class="field-error" id="err-message"></span></div>
+          </div>
+          <button class="form-submit-btn full-width-btn" onclick="submitJoinForm()">Send Join Request →</button>
+          <p class="form-privacy">🔒 Your information stays private within the brotherhood.</p>
+        </div>
+        <div id="stepSuccess" class="hidden">
+          <div class="success-icon">✅</div>
+          <h3 class="form-panel-title">You're in the Circle.</h3>
+          <p class="form-panel-sub">Welcome, brother. We'll be in touch within 48 hours. Follow us on Instagram to meet the community.</p>
+          <div class="success-detail" id="successDetail"></div>
+          <a href="#" class="form-submit-btn" style="display:inline-block;text-align:center;text-decoration:none;margin-top:1.5rem;">Follow on Instagram →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <div class="blog-header reveal">
+    <div class="blog-header-left"><div class="section-tag">Brotherhood Insights</div><h2 class="section-title">The Iron Circle Blog</h2></div>
+  </div>
+  <div class="blog-grid" id="blogGrid"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="nav-logo">Iron<span>Circle</span></span>
+      <p>A lifelong brotherhood for men of every generation — built on strength, accountability, and genuine community.</p>
+    </div>
+    <div class="footer-col"><h4>The Circles</h4><ul><li><a href="#">Elders Circle (30+)</a></li><li><a href="#">Rising Circle (18–29)</a></li><li><a href="#">Young Iron (7–17)</a></li><li><a href="#">Membership</a></li></ul></div>
+    <div class="footer-col"><h4>Community</h4><ul><li><a href="#">Events Calendar</a></li><li><a href="#">Weekly Circles</a></li><li><a href="#">Workshops</a></li><li><a href="#">Mentorship</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Contact</a></li><li><a href="#">Instagram</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Iron Circle. All rights reserved.</p>
+    <p>Built for brotherhood.</p>
+    <div style="display:flex;gap:0.8rem;">
+      <button class="admin-trigger" onclick="openStaffPortal()">👤 Staff</button>
+      <button class="admin-trigger" onclick="openAdminOverlay()">⚙ Admin</button>
+    </div>
+  </div>
+</footer>
+
+
+<!-- BLOG READER -->
+<div class="reader-overlay" id="blogReader">
+  <div class="reader-inner">
+    <button class="reader-back" onclick="closeReader()">← Back to Blog</button>
+    <div class="reader-circle-tag" id="readerTag"></div>
+    <h1 class="reader-title" id="readerTitle"></h1>
+    <div class="reader-meta"><span id="readerAuthor"></span><span id="readerDate"></span></div>
+    <div class="reader-body" id="readerBody"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ADMIN OVERLAY
+═══════════════════════════════════════════ -->
+<div class="admin-overlay" id="adminOverlay">
+  <!-- LOGIN -->
+  <div class="admin-login" id="adminLogin">
+    <div class="login-box">
+      <div class="login-logo">Iron<span>Circle</span></div>
+      <div class="login-sub">Admin Portal</div>
+      <div class="login-fields">
+        <div class="form-group"><label class="form-label">Username</label><input class="form-input" type="text" id="adminUser" placeholder="ironcircle" autocomplete="off"></div>
+        <div class="form-group"><label class="form-label">Password</label><input class="form-input" type="password" id="adminPass" placeholder="••••••••" onkeydown="if(event.key==='Enter')attemptAdminLogin()"></div>
+      </div>
+      <div class="login-error" id="adminLoginError"></div>
+      <button class="login-btn" onclick="attemptAdminLogin()">Sign In →</button>
+      <button class="admin-logout" style="display:block;margin:1.2rem auto 0;width:fit-content;" onclick="closeAdminOverlay()">← Back to Site</button>
+      <p class="login-hint">Restricted access · Iron Circle admins only</p>
+    </div>
+  </div>
+  <!-- DASHBOARD -->
+  <div class="admin-dashboard" id="adminDashboard">
+    <div class="admin-topbar">
+      <div class="admin-topbar-logo">Iron<span>Circle</span> <span style="font-size:0.85rem;color:rgba(245,240,232,0.3);font-family:'DM Sans',sans-serif;font-weight:300;">Admin</span></div>
+      <div class="admin-topbar-right">
+        <span class="admin-badge">Admin Access</span>
+        <button class="admin-logout" onclick="adminLogout()">Sign Out</button>
+        <button class="admin-logout" onclick="closeAdminOverlay()">← Back to Site</button>
+      </div>
+    </div>
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="switchAdminTab('blog',this)">📝 Blog</button>
+      <button class="admin-tab" onclick="switchAdminTab('members',this)">👥 Members</button>
+      <button class="admin-tab" onclick="switchAdminTab('progress',this)">📈 Progress</button>
+      <button class="admin-tab" onclick="switchAdminTab('staff',this)">🛡️ Staff</button>
+    </div>
+
+    <!-- TAB: BLOG -->
+    <div class="admin-tab-panel" id="tab-blog">
+      <div class="admin-body">
+        <div class="admin-section-title">Blog Management</div>
+        <div class="admin-section-sub">Create, edit, and delete posts across all Iron Circle circles.</div>
+        <div class="admin-stats" id="adminBlogStats"></div>
+        <button class="admin-new-btn" onclick="openAdminBlogModal()"><span>+</span> New Post</button>
+        <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Title</th><th>Circle</th><th>Author</th><th>Date</th><th>Actions</th></tr></thead><tbody id="adminBlogBody"></tbody></table></div>
+      </div>
+    </div>
+
+    <!-- TAB: MEMBERS -->
+    <div class="admin-tab-panel hidden" id="tab-members">
+      <div class="admin-body">
+        <div class="crm-header">
+          <div><div class="admin-section-title">Member CRM</div><div class="admin-section-sub">All join requests and member profiles.</div></div>
+          <div class="crm-toolbar">
+            <input class="crm-search" type="text" id="crmSearch" placeholder="Search members..." oninput="renderMembersTable()">
+            <div class="form-select-wrapper" style="min-width:160px;"><select class="form-input form-select crm-filter" id="crmFilter" onchange="renderMembersTable()"><option value="">All Circles</option><option value="elders">Elders (30+)</option><option value="rising">Rising (18–29)</option><option value="youth">Young Iron (7–17)</option></select></div>
+            <button class="admin-new-btn" style="margin:0;" onclick="openMemberModal()"><span>+</span> Add Member</button>
+          </div>
+        </div>
+        <div class="admin-stats" id="crmStats"></div>
+        <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Name</th><th>DOB / Age</th><th>Circle</th><th>Email</th><th>Phone</th><th>Status</th><th>Joined</th><th>Staff</th><th>Actions</th></tr></thead><tbody id="crmTableBody"></tbody></table></div>
+      </div>
+    </div>
+
+    <!-- TAB: PROGRESS -->
+    <div class="admin-tab-panel hidden" id="tab-progress">
+      <div class="admin-body">
+        <div class="crm-header">
+          <div><div class="admin-section-title">Member Progress</div><div class="admin-section-sub">Track each member's journey, milestones, and timestamped notes.</div></div>
+          <div class="crm-toolbar">
+            <input class="crm-search" type="text" id="progressSearch" placeholder="Search members..." oninput="renderProgressList()">
+            <div class="form-select-wrapper" style="min-width:160px;"><select class="form-input form-select crm-filter" id="progressFilter" onchange="renderProgressList()"><option value="">All Circles</option><option value="elders">Elders (30+)</option><option value="rising">Rising (18–29)</option><option value="youth">Young Iron (7–17)</option></select></div>
+          </div>
+        </div>
+        <div id="progressList" class="progress-list"></div>
+      </div>
+    </div>
+
+    <!-- TAB: STAFF -->
+    <div class="admin-tab-panel hidden" id="tab-staff">
+      <div class="admin-body">
+        <div class="crm-header">
+          <div><div class="admin-section-title">Staff, Mentors & Advisors</div><div class="admin-section-sub">Manage credentials, roles, and member allocations.</div></div>
+          <div class="crm-toolbar">
+            <input class="crm-search" type="text" id="staffSearch" placeholder="Search staff..." oninput="renderStaffTable()">
+            <button class="admin-new-btn" style="margin:0;" onclick="openStaffModal()"><span>+</span> Add Staff</button>
+          </div>
+        </div>
+        <div class="admin-stats" id="staffStats"></div>
+        <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Name</th><th>Role</th><th>Circle</th><th>Email / Login</th><th>Assigned Members</th><th>Status</th><th>Actions</th></tr></thead><tbody id="staffTableBody"></tbody></table></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     STAFF PORTAL
+═══════════════════════════════════════════ -->
+<div class="admin-overlay" id="staffPortal">
+  <div class="admin-login" id="staffLogin">
+    <div class="login-box">
+      <div class="login-logo">Iron<span>Circle</span></div>
+      <div class="login-sub">Staff Portal</div>
+      <div class="login-fields">
+        <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" id="staffLoginEmail" placeholder="your@ironcircle.com" autocomplete="off"></div>
+        <div class="form-group"><label class="form-label">Password</label><input class="form-input" type="password" id="staffLoginPass" placeholder="••••••••" onkeydown="if(event.key==='Enter')attemptStaffLogin()"></div>
+      </div>
+      <div class="login-error" id="staffLoginError"></div>
+      <button class="login-btn" onclick="attemptStaffLogin()">Sign In →</button>
+      <button class="admin-logout" style="display:block;margin:1.2rem auto 0;width:fit-content;" onclick="closeStaffPortal()">← Back to Site</button>
+      <p class="login-hint">Iron Circle staff, mentors & advisors only</p>
+    </div>
+  </div>
+  <div class="admin-dashboard" id="staffDashboard">
+    <div class="admin-topbar">
+      <div class="admin-topbar-logo">Iron<span>Circle</span> <span style="font-size:0.85rem;color:rgba(245,240,232,0.3);font-family:'DM Sans',sans-serif;font-weight:300;">Staff Portal</span></div>
+      <div class="admin-topbar-right">
+        <span class="admin-badge" id="staffRoleBadge" style="background:rgba(74,158,255,0.15);color:#4a9eff;border-color:rgba(74,158,255,0.25);"></span>
+        <span style="font-size:0.8rem;color:rgba(245,240,232,0.4);" id="staffWelcome"></span>
+        <button class="admin-logout" onclick="staffLogout()">Sign Out</button>
+        <button class="admin-logout" onclick="closeStaffPortal()">← Back to Site</button>
+      </div>
+    </div>
+    <div class="admin-body">
+      <div class="staff-profile-card" id="staffProfileCard"></div>
+      <div style="margin-top:2.5rem;">
+        <div class="crm-header">
+          <div><div class="admin-section-title">My Assigned Members</div><div class="admin-section-sub">Members allocated to you — click a member to view full profile & progress notes.</div></div>
+          <div class="crm-toolbar"><input class="crm-search" type="text" id="staffMemberSearch" placeholder="Search..." oninput="renderStaffMembersTable()"></div>
+        </div>
+        <div class="admin-stats" id="staffMemberStats"></div>
+        <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Name</th><th>DOB / Age</th><th>Circle</th><th>Email</th><th>Phone</th><th>Status</th><th>Progress</th><th>Notes</th><th></th></tr></thead><tbody id="staffMembersBody"></tbody></table></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ADMIN MODALS
+═══════════════════════════════════════════ -->
+
+<!-- BLOG ADMIN MODAL -->
+<div class="admin-modal-overlay" id="adminBlogModal" onclick="if(event.target===this)closeAdminBlogModal()">
+  <div class="admin-modal-box">
+    <button class="admin-modal-close" onclick="closeAdminBlogModal()">✕</button>
+    <div class="admin-modal-title" id="adminBlogModalTitle">New Blog Post</div>
+    <p class="admin-modal-sub">Fill in the details to publish a post.</p>
+    <div class="admin-modal-fields">
+      <div class="form-group"><label class="form-label">Post Title <span class="req">*</span></label><input class="form-input" type="text" id="aTitle" placeholder="Strong title"><span class="field-error" id="err-aTitle"></span></div>
+      <div class="form-group"><label class="form-label">Author Name <span class="req">*</span></label><input class="form-input" type="text" id="aAuthor" placeholder="Author name"><span class="field-error" id="err-aAuthor"></span></div>
+      <div class="form-group"><label class="form-label">Circle <span class="req">*</span></label><div class="form-select-wrapper"><select class="form-input form-select" id="aCircle"><option value="" disabled selected>Select a circle</option><option value="men">Elders Circle (30+)</option><option value="young">Rising Circle (18–29)</option><option value="youth">Young Iron (7–17)</option><option value="general">General Brotherhood</option></select></div><span class="field-error" id="err-aCircle"></span></div>
+      <div class="form-group"><label class="form-label">Short Summary <span class="req">*</span></label><input class="form-input" type="text" id="aSummary" placeholder="One sentence summary"><span class="field-error" id="err-aSummary"></span></div>
+      <div class="form-group"><label class="form-label">Full Content <span class="req">*</span></label><textarea class="form-input modal-textarea" id="aContent" style="min-height:160px;" placeholder="Write the full blog post..."></textarea><span class="field-error" id="err-aContent"></span></div>
+    </div>
+    <div class="admin-modal-footer"><button class="form-back-btn" onclick="closeAdminBlogModal()">Cancel</button><button class="form-submit-btn" id="adminBlogSaveBtn" onclick="saveAdminBlogPost()">Publish →</button></div>
+  </div>
+</div>
+
+<!-- MEMBER MODAL -->
+<div class="admin-modal-overlay" id="memberModal" onclick="if(event.target===this)closeMemberModal()">
+  <div class="admin-modal-box">
+    <button class="admin-modal-close" onclick="closeMemberModal()">✕</button>
+    <div class="admin-modal-title" id="memberModalTitle">Add Member</div>
+    <p class="admin-modal-sub">Add or edit a member profile in the CRM.</p>
+    <div class="admin-modal-fields">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">First Name <span class="req">*</span></label><input class="form-input" type="text" id="mFirst" placeholder="First name"><span class="field-error" id="err-mFirst"></span></div>
+        <div class="form-group"><label class="form-label">Last Name <span class="req">*</span></label><input class="form-input" type="text" id="mLast" placeholder="Last name"><span class="field-error" id="err-mLast"></span></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Date of Birth <span class="req">*</span></label><input class="form-input" type="date" id="mDob" style="color-scheme:dark"><span class="field-error" id="err-mDob"></span></div>
+        <div class="form-group"><label class="form-label">Phone</label><input class="form-input" type="tel" id="mPhone" placeholder="0400 000 000"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email <span class="req">*</span></label><input class="form-input" type="email" id="mEmail" placeholder="email@example.com"><span class="field-error" id="err-mEmail"></span></div>
+      <div class="form-group"><label class="form-label">Circle <span class="req">*</span></label><div class="form-select-wrapper"><select class="form-input form-select" id="mCircle"><option value="" disabled selected>Select circle</option><option value="elders">Elders Circle (30+)</option><option value="rising">Rising Circle (18–29)</option><option value="youth">Young Iron (7–17)</option></select></div><span class="field-error" id="err-mCircle"></span></div>
+      <div class="form-group"><label class="form-label">Status</label><div class="form-select-wrapper"><select class="form-input form-select" id="mStatus"><option value="pending">Pending</option><option value="active">Active</option><option value="inactive">Inactive</option></select></div></div>
+      <div class="form-group"><label class="form-label">Intake Message / Notes</label><textarea class="form-input" id="mMessage" style="min-height:70px;" placeholder="Their signup message or intake notes..."></textarea></div>
+    </div>
+    <div class="admin-modal-footer"><button class="form-back-btn" onclick="closeMemberModal()">Cancel</button><button class="form-submit-btn" id="memberSaveBtn" onclick="saveMember()">Save Member →</button></div>
+  </div>
+</div>
+
+<!-- PROGRESS / NOTES MODAL -->
+<div class="admin-modal-overlay" id="progressModal" onclick="if(event.target===this)closeProgressModal()">
+  <div class="admin-modal-box" style="max-width:740px;">
+    <button class="admin-modal-close" onclick="closeProgressModal()">✕</button>
+    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.3rem;">
+      <div class="admin-modal-title" id="progressModalName" style="margin-bottom:0;flex:1;">Member Progress</div>
+      <span class="status-badge" id="progressModalStatus"></span>
+    </div>
+    <p class="admin-modal-sub" id="progressModalMeta"></p>
+
+    <!-- Progress Bars -->
+    <div style="margin-bottom:0.5rem;"><span class="form-label" style="color:rgba(245,240,232,0.45);">ENGAGEMENT METRICS</span></div>
+    <div class="progress-bars" id="progressBars"></div>
+
+    <!-- Milestones -->
+    <div style="margin:1.5rem 0 0.8rem;"><div class="form-label" style="color:rgba(245,240,232,0.45);margin-bottom:0.8rem;">MILESTONES</div>
+      <div id="milestoneList" class="milestone-list"></div>
+      <div style="display:flex;gap:0.6rem;margin-top:0.8rem;">
+        <input class="form-input" type="text" id="newMilestone" placeholder="Add a milestone..." style="flex:1;background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:var(--warm-white);" onkeydown="if(event.key==='Enter')addMilestone()">
+        <button class="admin-new-btn" style="margin:0;padding:0.6rem 1rem;white-space:nowrap;" onclick="addMilestone()">+ Add</button>
+      </div>
+    </div>
+
+    <!-- Progress Notes with timestamps -->
+    <div style="margin-top:1.5rem;">
+      <div class="form-label" style="color:rgba(245,240,232,0.45);margin-bottom:0.8rem;">PROGRESS NOTES <span style="font-weight:300;text-transform:none;letter-spacing:0;opacity:0.5;font-size:0.7rem;">— each note is timestamped automatically</span></div>
+      <div id="noteList" class="note-list"></div>
+      <div class="note-add-row">
+        <textarea class="note-input" id="newNoteText" placeholder="Write a progress note..." onkeydown="if(event.ctrlKey&&event.key==='Enter')addProgressNote()"></textarea>
+        <button class="note-add-btn" onclick="addProgressNote()">+ Add Note</button>
+      </div>
+      <div style="font-size:0.68rem;color:rgba(245,240,232,0.2);margin-top:0.4rem;">Ctrl+Enter to save quickly</div>
+    </div>
+
+    <div class="admin-modal-footer"><button class="form-back-btn" onclick="closeProgressModal()">Cancel</button><button class="form-submit-btn" onclick="saveProgress()">Save Progress →</button></div>
+  </div>
+</div>
+
+<!-- STAFF MODAL -->
+<div class="admin-modal-overlay" id="staffModal" onclick="if(event.target===this)closeStaffModal()">
+  <div class="admin-modal-box">
+    <button class="admin-modal-close" onclick="closeStaffModal()">✕</button>
+    <div class="admin-modal-title" id="staffModalTitle">Add Staff Member</div>
+    <p class="admin-modal-sub">Staff, mentors and advisors each get their own portal login to view only their allocated members.</p>
+    <div class="admin-modal-fields">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">First Name <span class="req">*</span></label><input class="form-input" type="text" id="sfFirst" placeholder="First name"><span class="field-error" id="err-sfFirst"></span></div>
+        <div class="form-group"><label class="form-label">Last Name <span class="req">*</span></label><input class="form-input" type="text" id="sfLast" placeholder="Last name"><span class="field-error" id="err-sfLast"></span></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email (used as login username) <span class="req">*</span></label><input class="form-input" type="email" id="sfEmail" placeholder="staff@ironcircle.com"><span class="field-error" id="err-sfEmail"></span></div>
+      <div class="form-group"><label class="form-label">Login Password <span class="req">*</span></label><input class="form-input" type="text" id="sfPass" placeholder="Set a secure password"><span class="field-error" id="err-sfPass"></span></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Role <span class="req">*</span></label><div class="form-select-wrapper"><select class="form-input form-select" id="sfRole"><option value="" disabled selected>Select role</option><option value="Mentor">Mentor</option><option value="Advisor">Advisor</option><option value="Coach">Coach</option><option value="Facilitator">Facilitator</option><option value="Coordinator">Coordinator</option><option value="Support">Support</option></select></div><span class="field-error" id="err-sfRole"></span></div>
+        <div class="form-group"><label class="form-label">Primary Circle <span class="req">*</span></label><div class="form-select-wrapper"><select class="form-input form-select" id="sfCircle"><option value="" disabled selected>Select circle</option><option value="elders">Elders Circle (30+)</option><option value="rising">Rising Circle (18–29)</option><option value="youth">Young Iron (7–17)</option><option value="all">All Circles</option></select></div><span class="field-error" id="err-sfCircle"></span></div>
+      </div>
+      <div class="form-group"><label class="form-label">Status</label><div class="form-select-wrapper"><select class="form-input form-select" id="sfStatus"><option value="active">Active</option><option value="inactive">Inactive</option></select></div></div>
+      <div class="form-group"><label class="form-label">Bio / Internal Notes</label><textarea class="form-input" id="sfBio" style="min-height:70px;" placeholder="Brief bio or internal notes..."></textarea></div>
+    </div>
+    <div class="admin-modal-footer"><button class="form-back-btn" onclick="closeStaffModal()">Cancel</button><button class="form-submit-btn" id="staffSaveBtn" onclick="saveStaff()">Save →</button></div>
+  </div>
+</div>
+
+<!-- ALLOCATE MODAL -->
+<div class="admin-modal-overlay" id="allocateModal" onclick="if(event.target===this)closeAllocateModal()">
+  <div class="admin-modal-box" style="max-width:680px;">
+    <button class="admin-modal-close" onclick="closeAllocateModal()">✕</button>
+    <div class="admin-modal-title" id="allocateTitle">Allocate Members</div>
+    <p class="admin-modal-sub" id="allocateSub">Select which members this staff member can see and support.</p>
+    <div style="display:flex;gap:0.8rem;margin-bottom:1.2rem;">
+      <input class="crm-search" type="text" id="allocateSearch" placeholder="Search members..." oninput="renderAllocateList()" style="flex:1;">
+      <div class="form-select-wrapper" style="min-width:150px;"><select class="form-input form-select crm-filter" id="allocateFilter" onchange="renderAllocateList()"><option value="">All Circles</option><option value="elders">Elders</option><option value="rising">Rising</option><option value="youth">Young Iron</option></select></div>
+    </div>
+    <div id="allocateList" class="allocate-list"></div>
+    <div class="admin-modal-footer"><button class="form-back-btn" onclick="closeAllocateModal()">Cancel</button><button class="form-submit-btn" onclick="saveAllocations()">Save Allocations →</button></div>
+  </div>
+</div>
+
+<!-- DELETE CONFIRM -->
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <div class="confirm-icon">🗑️</div>
+    <div class="confirm-title">Confirm Delete</div>
+    <p class="confirm-msg" id="confirmMsg">This action cannot be undone.</p>
+    <div class="confirm-btns"><button class="confirm-no" onclick="closeConfirm()">Cancel</button><button class="confirm-yes" onclick="confirmDelete()">Yes, Delete</button></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="admin-toast" id="adminToast"></div>
+
+<script>
+(function(){
+'use strict';
+
+// ── SCROLL REVEAL ──
+const reveals=document.querySelectorAll('.reveal');
+const revObs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);revObs.unobserve(e.target);}});
+},{threshold:0.1});
+reveals.forEach(el=>revObs.observe(el));
+
+// ── RIBBONS ──
+const RIBBON_DATA={
+  ribbonElders:['Divorce & Rebuilding','Career Transition','Father Wounds','Grief & Loss','Business Pressure','Marriage Struggles','Identity Crisis','Health Setbacks','Empty Nest','Faith & Purpose','Financial Stress','Anger & Control','Loneliness at the Top','Midlife Reset','Retirement & Meaning'],
+  ribbonRising:['Finding Purpose','First Job Pressure','Heartbreak & Moving On','Leaving Home','Social Anxiety','Addiction & Habits','Imposter Syndrome','Student Debt','Toxic Friendships','Self-Worth','Body Image','Dating & Relationships','Quarter-Life Crisis','Family Expectations','Starting Over'],
+  ribbonYouth:['Bullying','Peer Pressure','Screen Addiction','Absent Father Figures','Lack of Confidence','Academic Stress','Anger Management','Identity & Belonging','Social Media Pressure','Anxiety','Sibling Rivalry','Making Real Friends','Respect & Boundaries','Emotional Expression','Finding Role Models'],
+};
+function buildRibbon(id,items){
+  const el=document.getElementById(id);if(!el)return;
+  el.innerHTML=[...items,...items].map(i=>`<span class="ribbon-item"><span class="ribbon-dot"></span>${i}</span>`).join('');
+}
+buildRibbon('ribbonElders',RIBBON_DATA.ribbonElders);
+buildRibbon('ribbonRising',RIBBON_DATA.ribbonRising);
+buildRibbon('ribbonYouth',RIBBON_DATA.ribbonYouth);
+
+// ── HELPERS ──
+function formatDate(){return new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'});}
+function formatDateTime(){return new Date().toLocaleString('en-AU',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});}
+function calcAge(dob){if(!dob)return'—';const b=new Date(dob),n=new Date();let a=n.getFullYear()-b.getFullYear();if(n<new Date(n.getFullYear(),b.getMonth(),b.getDate()))a--;return a;}
+function formatDob(dob){if(!dob)return'—';const d=new Date(dob);return d.toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'});}
+function initials(name){return name.split(' ').map(w=>w[0]||'').join('').toUpperCase().slice(0,2);}
+
+// ── DATA ──
+let members=[
+  {id:1,first:'Marcus',last:'K.',dob:'1985-03-14',email:'marcus.k@example.com',phone:'0411 000 001',circle:'elders',status:'active',message:'Looking for brotherhood and accountability.',joined:'2 May 2026',progress:{attendance:80,engagement:75,growth:65},milestones:[{text:'First session attended',done:true},{text:'Brotherhood circle joined',done:true},{text:'Completed 4-week check-in',done:false}],notes:[{id:1,date:'2 May 2026 09:15',text:'Introductory call completed. Marcus is highly motivated and has a strong network. Prioritises leadership growth.'},{id:2,date:'9 May 2026 18:30',text:'Attended first weekly circle. Engaged well with the group, opened up about work pressure.'}]},
+  {id:2,first:'Jordan',last:'L.',dob:'2002-07-22',email:'jordan.l@example.com',phone:'0422 000 002',circle:'rising',status:'active',message:'Need purpose and direction in my 20s.',joined:'28 Apr 2026',progress:{attendance:90,engagement:85,growth:70},milestones:[{text:'First session attended',done:true},{text:'Accountability partner matched',done:true},{text:'Career goal set',done:true},{text:'30-day habit challenge',done:false}],notes:[{id:1,date:'28 Apr 2026 10:00',text:'Intake complete. Jordan is energetic but lacks direction. Good candidate for the purpose workshop in May.'},{id:2,date:'5 May 2026 16:00',text:'Career session completed. Set goal to transition into IT by end of year. Matched with Elders mentor.'}]},
+  {id:3,first:'Ryan',last:'D.',dob:'2011-11-05',email:'ryan.d@example.com',phone:'0433 000 003',circle:'youth',status:'active',message:"Father enrolled him. Struggling with confidence at school.",joined:'20 Apr 2026',progress:{attendance:95,engagement:80,growth:60},milestones:[{text:'First Saturday session',done:true},{text:'Team challenge completed',done:true},{text:'Mentor matched',done:false}],notes:[{id:1,date:'20 Apr 2026 08:00',text:'Ryan joined with father Thomas. Quiet and withdrawn initially but engaged in physical activity.'},{id:2,date:'27 Apr 2026 08:30',text:'Second session — noticeable improvement in group participation. Led warm-up without prompting.'}]},
+];
+
+let staff=[
+  {id:1,first:'Daniel',last:'W.',email:'daniel.w@ironcircle.com',pass:'Staff@001',role:'Mentor',circle:'elders',status:'active',bio:"Experienced men's coach with 10 years in leadership development.",assignedIds:[1]},
+  {id:2,first:'Sarah',last:'M.',email:'sarah.m@ironcircle.com',pass:'Staff@002',role:'Advisor',circle:'rising',status:'active',bio:'Youth and young adult facilitator. Passionate about purpose-driven growth.',assignedIds:[2]},
+  {id:3,first:'James',last:'T.',email:'james.t@ironcircle.com',pass:'Staff@003',role:'Facilitator',circle:'youth',status:'active',bio:'Specialises in youth character development and resilience.',assignedIds:[3]},
+];
+
+let posts=[
+  {id:1,title:'Why Every Man Needs a Brotherhood',author:'Marcus K.',circle:'men',date:'2 May 2026',summary:'The quiet epidemic of male loneliness — and why Iron Circle exists.',content:"There's a silence that most men carry. Not the comfortable kind — the kind that sits in your chest at 2am when life is falling apart and you realise you have nobody to call.\n\nThis is the quiet epidemic no one talks about. Men in their 30s, 40s, 50s — outwardly successful, inwardly isolated. We were never taught to build deep friendships.\n\nIron Circle was built because of that silence. Not to fill it with noise, but to fill it with something real — men who show up, who speak truth, who hold each other accountable not out of obligation, but out of genuine brotherhood."},
+  {id:2,title:'The 5 Habits That Changed My 20s',author:'Jordan L.',circle:'young',date:'28 Apr 2026',summary:'Practical disciplines every young man should build before 30.',content:"I wasted the first two years of my 20s drifting. No direction, no discipline, no accountability.\n\n1. Morning stillness — 15 minutes before any screen.\n2. Weekly review — every Sunday, write what you did and what you'll do differently.\n3. One hard conversation a week — most problems fester because we avoid them.\n4. Movement every day — walk, stretch, lift. Your body affects your mind.\n5. A brotherhood — accountability from people who actually know you."},
+  {id:3,title:'Raising Boys Who Become Good Men',author:'Thomas D.',circle:'youth',date:'20 Apr 2026',summary:'What our sons are missing — and what we can do about it.',content:"My son Ryan was 13 when I first brought him to Young Iron. He was quiet, withdrawn, spending most of his time behind a screen.\n\nSix months later, I watched him lead a team exercise at a Saturday session. He was calm, clear, and kind. I almost didn't recognise him.\n\nWhat boys need isn't discipline alone. It's a community of older men and peers who model what good manhood looks like — every single week."},
+];
+
+// ── CIRCLE META ──
+const CM={
+  men:{label:'Elders Circle · 30+',tagClass:'bct-men',topClass:'top-men'},
+  young:{label:'Rising Circle · 18–29',tagClass:'bct-young',topClass:'top-young'},
+  youth:{label:'Young Iron · 7–17',tagClass:'bct-youth',topClass:'top-youth'},
+  general:{label:'General Brotherhood',tagClass:'bct-general',topClass:'top-general'},
+  elders:{label:'Elders Circle · 30+',tagClass:'bct-men',topClass:'top-men'},
+  rising:{label:'Rising Circle · 18–29',tagClass:'bct-young',topClass:'top-young'},
+};
+const CLABEL={elders:'Elders · 30+',rising:'Rising · 18–29',youth:'Young Iron · 7–17'};
+const CMAP={elders:'bct-men',rising:'bct-young',youth:'bct-youth'};
+const PMAP={elders:'pa-gold',rising:'pa-red',youth:'pa-blue'};
+const PFILLS={elders:'fill-gold',rising:'fill-red',youth:'fill-blue'};
+const PLABEL={elders:'Elders Circle · 30+',rising:'Rising Circle · 18–29',youth:'Young Iron · 7–17'};
+const SROLE_COLORS={Mentor:'rgba(201,168,76',Advisor:'rgba(74,158,255',Coach:'rgba(192,57,43',Facilitator:'rgba(46,160,67',Coordinator:'rgba(180,100,220',Support:'rgba(150,150,150'};
+
+// ── JOIN FORM ──
+let selectedCircle=null;
+window.selectCircle=function(el){
+  document.querySelectorAll('.circle-option').forEach(o=>o.className='circle-option');
+  selectedCircle=el.dataset.circle;
+  el.classList.add(selectedCircle==='elders'?'selected-elders':selectedCircle==='rising'?'selected-rising':'selected-youth');
+  const e=document.getElementById('err-circle');if(e)e.textContent='';
+};
+window.jumpToJoin=function(circle){document.getElementById('contact').scrollIntoView({behavior:'smooth'});setTimeout(function(){var el=document.querySelector('.circle-option[data-circle="'+circle+'"]');if(el)selectCircle(el);},600);};
+window.submitJoinForm=function(){
+  const fn=document.getElementById('firstName').value.trim(),ln=document.getElementById('lastName').value.trim(),
+        dob=document.getElementById('dob').value,email=document.getElementById('email').value.trim(),
+        phone=document.getElementById('phone').value.trim(),msg=document.getElementById('message').value.trim();
+  ['err-firstName','err-lastName','err-dob','err-email','err-circle','err-message'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent='';});
+  let ok=true;
+  if(!fn){document.getElementById('err-firstName').textContent='Required.';ok=false;}
+  if(!ln){document.getElementById('err-lastName').textContent='Required.';ok=false;}
+  if(!dob){document.getElementById('err-dob').textContent='Date of birth required.';ok=false;}
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('err-email').textContent='Valid email required.';ok=false;}
+  if(!selectedCircle){document.getElementById('err-circle').textContent='Please select a circle.';ok=false;}
+  if(!msg){document.getElementById('err-message').textContent='Please write a short message.';ok=false;}
+  if(!ok)return;
+  const cl=selectedCircle==='elders'?'Elders Circle (30+)':selectedCircle==='rising'?'Rising Circle (18–29)':'Young Iron (7–17)';
+  members.unshift({id:Date.now(),first:fn,last:ln,dob,email,phone,circle:selectedCircle,status:'pending',message:msg,joined:formatDate(),progress:{attendance:0,engagement:0,growth:0},milestones:[],notes:[]});
+  document.getElementById('mainForm').classList.add('hidden');
+  document.getElementById('stepSuccess').classList.remove('hidden');
+  document.getElementById('successDetail').innerHTML=`<strong>${fn}</strong>, your join request for <strong>${cl}</strong> has been received. We'll reach out to <strong>${email}</strong> within 48 hours.`;
+};
+
+// ── BLOG ──
+function renderBlog(){
+  const grid=document.getElementById('blogGrid');
+  if(!posts.length){grid.innerHTML='<div class="blog-empty"><p>No posts yet.</p><span>Click "Add New Post" to publish.</span></div>';return;}
+  grid.innerHTML=posts.map(p=>{
+    const m=CM[p.circle]||CM.general;
+    return`<div class="blog-card" onclick="openReader(${p.id})">
+      <div class="blog-card-top ${m.topClass}"></div>
+      <div class="blog-card-body">
+        <div class="blog-meta"><span class="blog-circle-tag ${m.tagClass}">${m.label}</span><span class="blog-date">${p.date}</span></div>
+        <h3>${p.title}</h3><p>${p.summary}</p>
+        <div class="blog-card-footer"><div class="blog-author"><div class="blog-avatar">${initials(p.author)}</div><span class="blog-author-name">${p.author}</span></div><span class="blog-read-link">Read →</span></div>
+      </div></div>`;
+  }).join('');
+}
+window.openBlogModal=()=>{document.getElementById('blogModal').classList.add('open');document.body.style.overflow='hidden';};
+window.closeBlogModal=()=>{document.getElementById('blogModal').classList.remove('open');document.body.style.overflow='';};
+window.publishBlogPost=function(){
+  const title=document.getElementById('blogTitle').value.trim(),author=document.getElementById('blogAuthor').value.trim(),
+        circle=document.getElementById('blogCircle').value,summary=document.getElementById('blogSummary').value.trim(),
+        content=document.getElementById('blogContent').value.trim();
+  let ok=true;
+  ['blogTitle','blogAuthor','blogCircle','blogSummary','blogContent'].forEach(id=>document.getElementById('err-'+id).textContent='');
+  if(!title){document.getElementById('err-blogTitle').textContent='Required.';ok=false;}
+  if(!author){document.getElementById('err-blogAuthor').textContent='Required.';ok=false;}
+  if(!circle){document.getElementById('err-blogCircle').textContent='Required.';ok=false;}
+  if(!summary){document.getElementById('err-blogSummary').textContent='Required.';ok=false;}
+  if(!content){document.getElementById('err-blogContent').textContent='Required.';ok=false;}
+  if(!ok)return;
+  posts.unshift({id:Date.now(),title,author,circle,date:formatDate(),summary,content});
+  renderBlog();closeBlogModal();
+  ['blogTitle','blogAuthor','blogSummary','blogContent'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('blogCircle').value='';
+};
+window.openReader=function(id){
+  const p=posts.find(x=>x.id===id);if(!p)return;
+  const m=CM[p.circle]||CM.general;
+  const tag=document.getElementById('readerTag');tag.className='reader-circle-tag '+m.tagClass;tag.textContent=m.label;
+  document.getElementById('readerTitle').textContent=p.title;
+  document.getElementById('readerAuthor').textContent='By '+p.author;
+  document.getElementById('readerDate').textContent=p.date;
+  document.getElementById('readerBody').textContent=p.content;
+  document.getElementById('blogReader').classList.add('open');document.body.style.overflow='hidden';
+};
+window.closeReader=function(){document.getElementById('blogReader').classList.remove('open');document.body.style.overflow='';setTimeout(()=>document.getElementById('blog').scrollIntoView({behavior:'smooth'}),50);};
+renderBlog();
+
+// ── ADMIN AUTH ──
+const ADMIN_CREDS={username:'ironcircle',password:'Admin@2026'};
+let adminLoggedIn=false;
+window.openAdminOverlay=()=>{document.getElementById('adminOverlay').classList.add('open');document.body.style.overflow='hidden';if(adminLoggedIn)showAdminDash();else showAdminLogin();};
+window.closeAdminOverlay=()=>{document.getElementById('adminOverlay').classList.remove('open');document.body.style.overflow='';};
+function showAdminLogin(){document.getElementById('adminLogin').style.display='flex';document.getElementById('adminDashboard').classList.remove('visible');document.getElementById('adminUser').value='';document.getElementById('adminPass').value='';document.getElementById('adminLoginError').textContent='';}
+function showAdminDash(){document.getElementById('adminLogin').style.display='none';document.getElementById('adminDashboard').classList.add('visible');renderAdminBlogStats();renderAdminBlogTable();}
+window.attemptAdminLogin=function(){
+  const u=document.getElementById('adminUser').value.trim(),p=document.getElementById('adminPass').value;
+  if(u===ADMIN_CREDS.username&&p===ADMIN_CREDS.password){adminLoggedIn=true;showAdminDash();}
+  else{document.getElementById('adminLoginError').textContent='Incorrect username or password.';document.getElementById('adminPass').value='';}
+};
+window.adminLogout=()=>{adminLoggedIn=false;showAdminLogin();};
+
+// ── ADMIN TABS ──
+window.switchAdminTab=function(tab,btn){
+  document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.admin-tab-panel').forEach(p=>p.classList.add('hidden'));
+  btn.classList.add('active');
+  document.getElementById('tab-'+tab).classList.remove('hidden');
+  if(tab==='blog'){renderAdminBlogStats();renderAdminBlogTable();}
+  if(tab==='members'){renderCrmStats();renderMembersTable();}
+  if(tab==='progress')renderProgressList();
+  if(tab==='staff'){renderStaffStats();renderStaffTable();}
+};
+
+// ── BLOG ADMIN ──
+let editingPostId=null;
+function renderAdminBlogStats(){
+  const c={men:0,young:0,youth:0,general:0};posts.forEach(p=>{c[p.circle]=(c[p.circle]||0)+1;});
+  document.getElementById('adminBlogStats').innerHTML=`<div class="admin-stat"><div class="admin-stat-num stat-c-white">${posts.length}</div><div class="admin-stat-label">Total Posts</div></div><div class="admin-stat"><div class="admin-stat-num stat-c-gold">${c.men||0}</div><div class="admin-stat-label">Elders Circle</div></div><div class="admin-stat"><div class="admin-stat-num stat-c-red">${c.young||0}</div><div class="admin-stat-label">Rising Circle</div></div><div class="admin-stat"><div class="admin-stat-num stat-c-blue">${(c.youth||0)+(c.general||0)}</div><div class="admin-stat-label">Young Iron + General</div></div>`;
+}
+function renderAdminBlogTable(){
+  const tb=document.getElementById('adminBlogBody');
+  if(!posts.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:rgba(245,240,232,0.25);padding:2rem;">No posts yet.</td></tr>';return;}
+  tb.innerHTML=posts.map(p=>{const m=CM[p.circle]||CM.general;return`<tr><td class="post-title">${p.title}</td><td><span class="blog-circle-tag ${m.tagClass}" style="font-size:0.62rem;">${m.label}</span></td><td>${p.author}</td><td style="color:rgba(245,240,232,0.4)">${p.date}</td><td><div class="admin-actions"><button class="btn-edit" onclick="openAdminBlogModal(${p.id})">Edit</button><button class="btn-delete" onclick="promptDelete(${p.id},'${p.title.replace(/'/g,"\\'")}','post')">Delete</button></div></td></tr>`;}).join('');
+}
+window.openAdminBlogModal=function(pid){
+  editingPostId=pid||null;
+  ['aTitle','aAuthor','aCircle','aSummary','aContent'].forEach(id=>document.getElementById('err-'+id).textContent='');
+  if(editingPostId){const p=posts.find(x=>x.id===editingPostId);document.getElementById('aTitle').value=p.title;document.getElementById('aAuthor').value=p.author;document.getElementById('aCircle').value=p.circle;document.getElementById('aSummary').value=p.summary;document.getElementById('aContent').value=p.content;document.getElementById('adminBlogModalTitle').textContent='Edit Post';document.getElementById('adminBlogSaveBtn').textContent='Save Changes →';}
+  else{['aTitle','aAuthor','aSummary','aContent'].forEach(id=>document.getElementById(id).value='');document.getElementById('aCircle').value='';document.getElementById('adminBlogModalTitle').textContent='New Blog Post';document.getElementById('adminBlogSaveBtn').textContent='Publish →';}
+  document.getElementById('adminBlogModal').classList.add('open');
+};
+window.closeAdminBlogModal=()=>{document.getElementById('adminBlogModal').classList.remove('open');editingPostId=null;};
+window.saveAdminBlogPost=function(){
+  const title=document.getElementById('aTitle').value.trim(),author=document.getElementById('aAuthor').value.trim(),circle=document.getElementById('aCircle').value,summary=document.getElementById('aSummary').value.trim(),content=document.getElementById('aContent').value.trim();
+  let ok=true;
+  ['aTitle','aAuthor','aCircle','aSummary','aContent'].forEach(id=>document.getElementById('err-'+id).textContent='');
+  if(!title){document.getElementById('err-aTitle').textContent='Required.';ok=false;}
+  if(!author){document.getElementById('err-aAuthor').textContent='Required.';ok=false;}
+  if(!circle){document.getElementById('err-aCircle').textContent='Required.';ok=false;}
+  if(!summary){document.getElementById('err-aSummary').textContent='Required.';ok=false;}
+  if(!content){document.getElementById('err-aContent').textContent='Required.';ok=false;}
+  if(!ok)return;
+  if(editingPostId){const i=posts.findIndex(x=>x.id===editingPostId);if(i>-1)posts[i]=Object.assign({},posts[i],{title,author,circle,summary,content});showToast('Post updated.');}
+  else{posts.unshift({id:Date.now(),title,author,circle,date:formatDate(),summary,content});showToast('Post published.');}
+  renderBlog();renderAdminBlogStats();renderAdminBlogTable();closeAdminBlogModal();
+};
+
+// ── MEMBERS CRM ──
+let editingMemberId=null;
+function renderCrmStats(){
+  const c={elders:0,rising:0,youth:0};members.forEach(m=>{if(c[m.circle]!==undefined)c[m.circle]++;});
+  document.getElementById('crmStats').innerHTML=`<div class="admin-stat"><div class="admin-stat-num stat-c-white">${members.length}</div><div class="admin-stat-label">Total Members</div></div><div class="admin-stat"><div class="admin-stat-num stat-c-gold">${c.elders}</div><div class="admin-stat-label">Elders Circle</div></div><div class="admin-stat"><div class="admin-stat-num stat-c-red">${c.rising}</div><div class="admin-stat-label">Rising Circle</div></div><div class="admin-stat"><div class="admin-stat-num stat-c-blue">${c.youth}</div><div class="admin-stat-label">Young Iron</div></div>`;
+}
+function getAssignedStaff(memberId){return staff.filter(s=>(s.assignedIds||[]).includes(memberId)).map(s=>s.first+' '+s.last[0]+'.').join(', ')||'—';}
+function renderMembersTable(){
+  const search=(document.getElementById('crmSearch')||{value:''}).value.toLowerCase();
+  const filter=(document.getElementById('crmFilter')||{value:''}).value;
+  const filtered=members.filter(m=>(!search||(m.first+' '+m.last).toLowerCase().includes(search)||m.email.toLowerCase().includes(search))&&(!filter||m.circle===filter));
+  const tb=document.getElementById('crmTableBody');
+  if(!filtered.length){tb.innerHTML='<tr><td colspan="9" style="text-align:center;color:rgba(245,240,232,0.25);padding:2rem;">No members found.</td></tr>';return;}
+  tb.innerHTML=filtered.map(m=>`<tr>
+    <td class="post-title">${m.first} ${m.last}</td>
+    <td style="white-space:nowrap;"><div style="font-size:0.82rem;">${formatDob(m.dob)}</div><div style="font-size:0.72rem;color:rgba(245,240,232,0.35);">Age ${calcAge(m.dob)}</div></td>
+    <td><span class="blog-circle-tag ${CMAP[m.circle]||''}" style="font-size:0.62rem;">${CLABEL[m.circle]||m.circle}</span></td>
+    <td><a href="mailto:${m.email}" style="color:rgba(245,240,232,0.6);text-decoration:none;">${m.email}</a></td>
+    <td style="color:rgba(245,240,232,0.5)">${m.phone||'—'}</td>
+    <td><span class="status-badge status-${m.status}">${m.status}</span></td>
+    <td style="color:rgba(245,240,232,0.4)">${m.joined}</td>
+    <td style="font-size:0.78rem;color:rgba(245,240,232,0.45)">${getAssignedStaff(m.id)}</td>
+    <td><div class="admin-actions">
+      <button class="btn-edit" onclick="openMemberModal(${m.id})">Edit</button>
+      <button class="btn-allocate" onclick="openProgressModal(${m.id})">Progress</button>
+      <button class="btn-delete" onclick="promptDelete(${m.id},'${(m.first+' '+m.last).replace(/'/g,"\\'")}','member')">Delete</button>
+    </div></td></tr>`).join('');
+}
+window.openMemberModal=function(mid){
+  editingMemberId=mid||null;
+  ['err-mFirst','err-mLast','err-mDob','err-mEmail','err-mCircle'].forEach(id=>document.getElementById(id).textContent='');
+  if(editingMemberId){const m=members.find(x=>x.id===editingMemberId);document.getElementById('mFirst').value=m.first;document.getElementById('mLast').value=m.last;document.getElementById('mDob').value=m.dob||'';document.getElementById('mPhone').value=m.phone||'';document.getElementById('mEmail').value=m.email;document.getElementById('mCircle').value=m.circle;document.getElementById('mStatus').value=m.status;document.getElementById('mMessage').value=m.message||'';document.getElementById('memberModalTitle').textContent='Edit Member';document.getElementById('memberSaveBtn').textContent='Save Changes →';}
+  else{['mFirst','mLast','mPhone','mEmail','mMessage'].forEach(id=>document.getElementById(id).value='');document.getElementById('mDob').value='';document.getElementById('mCircle').value='';document.getElementById('mStatus').value='pending';document.getElementById('memberModalTitle').textContent='Add Member';document.getElementById('memberSaveBtn').textContent='Save Member →';}
+  document.getElementById('memberModal').classList.add('open');
+};
+window.closeMemberModal=()=>{document.getElementById('memberModal').classList.remove('open');editingMemberId=null;};
+window.saveMember=function(){
+  const first=document.getElementById('mFirst').value.trim(),last=document.getElementById('mLast').value.trim(),
+        dob=document.getElementById('mDob').value,phone=document.getElementById('mPhone').value.trim(),
+        email=document.getElementById('mEmail').value.trim(),circle=document.getElementById('mCircle').value,
+        status=document.getElementById('mStatus').value,message=document.getElementById('mMessage').value.trim();
+  let ok=true;
+  ['err-mFirst','err-mLast','err-mDob','err-mEmail','err-mCircle'].forEach(id=>document.getElementById(id).textContent='');
+  if(!first){document.getElementById('err-mFirst').textContent='Required.';ok=false;}
+  if(!last){document.getElementById('err-mLast').textContent='Required.';ok=false;}
+  if(!dob){document.getElementById('err-mDob').textContent='Date of birth required.';ok=false;}
+  if(!email){document.getElementById('err-mEmail').textContent='Required.';ok=false;}
+  if(!circle){document.getElementById('err-mCircle').textContent='Required.';ok=false;}
+  if(!ok)return;
+  if(editingMemberId){const i=members.findIndex(x=>x.id===editingMemberId);if(i>-1)members[i]=Object.assign({},members[i],{first,last,dob,phone,email,circle,status,message});showToast('Member updated.');}
+  else{members.unshift({id:Date.now(),first,last,dob,phone,email,circle,status,message,joined:formatDate(),progress:{attendance:0,engagement:0,growth:0},milestones:[],notes:[]});showToast('Member added.');}
+  renderCrmStats();renderMembersTable();closeMemberModal();
+};
+
+// ── PROGRESS ──
+let progressMemberId=null;
+function renderProgressList(){
+  const search=(document.getElementById('progressSearch')||{value:''}).value.toLowerCase();
+  const filter=(document.getElementById('progressFilter')||{value:''}).value;
+  const filtered=members.filter(m=>(!search||(m.first+' '+m.last).toLowerCase().includes(search))&&(!filter||m.circle===filter));
+  const el=document.getElementById('progressList');
+  if(!filtered.length){el.innerHTML='<div class="progress-empty">No members found.</div>';return;}
+  el.innerHTML=filtered.map(m=>{
+    const done=(m.milestones||[]).filter(x=>x.done).length,total=(m.milestones||[]).length;
+    const noteCount=(m.notes||[]).length;
+    const p=m.progress||{attendance:0,engagement:0,growth:0};
+    const fill=PFILLS[m.circle]||'fill-gold',av=PMAP[m.circle]||'pa-gold',ctag=CMAP[m.circle]||'bct-men';
+    return`<div class="progress-row" onclick="openProgressModal(${m.id})">
+      <div class="progress-avatar ${av}">${m.first[0]}${m.last[0]}</div>
+      <div class="progress-info">
+        <div class="progress-name">${m.first} ${m.last} <span style="font-size:0.72rem;color:rgba(245,240,232,0.35);font-weight:300;">Age ${calcAge(m.dob)}</span></div>
+        <div class="progress-meta-row">
+          <span class="blog-circle-tag ${ctag}" style="font-size:0.65rem;">${PLABEL[m.circle]||m.circle}</span>
+          <span class="status-badge status-${m.status}">${m.status}</span>
+          <span style="font-size:0.7rem;color:rgba(245,240,232,0.35);">✓ ${done}/${total} milestones · 📝 ${noteCount} notes</span>
+        </div>
+      </div>
+      <div class="progress-mini-bars">
+        <div class="mini-bar-row"><span class="mini-bar-label">Attend.</span><div class="mini-bar-track"><div class="mini-bar-fill ${fill}" style="width:${p.attendance}%"></div></div><span class="mini-bar-val">${p.attendance}%</span></div>
+        <div class="mini-bar-row"><span class="mini-bar-label">Engage.</span><div class="mini-bar-track"><div class="mini-bar-fill ${fill}" style="width:${p.engagement}%"></div></div><span class="mini-bar-val">${p.engagement}%</span></div>
+        <div class="mini-bar-row"><span class="mini-bar-label">Growth</span><div class="mini-bar-track"><div class="mini-bar-fill ${fill}" style="width:${p.growth}%"></div></div><span class="mini-bar-val">${p.growth}%</span></div>
+      </div>
+      <button class="progress-edit-btn" onclick="event.stopPropagation();openProgressModal(${m.id})">Update →</button>
+    </div>`;
+  }).join('');
+}
+window.openProgressModal=function(id){
+  const m=members.find(x=>x.id===id);if(!m)return;
+  progressMemberId=id;
+  document.getElementById('progressModalName').textContent=m.first+' '+m.last;
+  document.getElementById('progressModalStatus').textContent=m.status;
+  document.getElementById('progressModalStatus').className='status-badge status-'+m.status;
+  document.getElementById('progressModalMeta').textContent=`${PLABEL[m.circle]||m.circle} · DOB: ${formatDob(m.dob)} (Age ${calcAge(m.dob)}) · Joined: ${m.joined}`;
+  document.getElementById('newNoteText').value='';
+  const p=m.progress||{attendance:0,engagement:0,growth:0};
+  const fill=PFILLS[m.circle]||'fill-gold';
+  document.getElementById('progressBars').innerHTML=[{key:'attendance',label:'Attendance'},{key:'engagement',label:'Engagement'},{key:'growth',label:'Personal Growth'}].map(bar=>`<div class="progress-bar-group"><div class="progress-bar-header"><span class="progress-bar-label">${bar.label}</span><span class="progress-bar-val" id="val-${bar.key}">${p[bar.key]}%</span></div><div class="progress-bar-track"><div class="progress-bar-fill-ui ${fill}" id="fill-${bar.key}" style="width:${p[bar.key]}%"></div></div><input type="range" class="progress-slider" id="slider-${bar.key}" min="0" max="100" value="${p[bar.key]}" oninput="updateBar('${bar.key}',this.value)"></div>`).join('');
+  renderMilestones(m);renderNotes(m);
+  document.getElementById('progressModal').classList.add('open');
+};
+window.updateBar=(key,val)=>{document.getElementById('val-'+key).textContent=val+'%';document.getElementById('fill-'+key).style.width=val+'%';};
+function renderMilestones(m){
+  const list=document.getElementById('milestoneList');
+  if(!m.milestones||!m.milestones.length){list.innerHTML='<div style="font-size:0.8rem;color:rgba(245,240,232,0.25);padding:0.4rem 0;">No milestones yet. Add one below.</div>';return;}
+  list.innerHTML=m.milestones.map((ms,i)=>`<div class="milestone-item"><div class="milestone-check ${ms.done?'done':''}" onclick="toggleMilestone(${i})">${ms.done?'✓':''}</div><span class="milestone-text ${ms.done?'done':''}">${ms.text}</span><button class="milestone-del" onclick="deleteMilestone(${i})">✕</button></div>`).join('');
+}
+window.toggleMilestone=i=>{const m=members.find(x=>x.id===progressMemberId);if(m){m.milestones[i].done=!m.milestones[i].done;renderMilestones(m);}};
+window.deleteMilestone=i=>{const m=members.find(x=>x.id===progressMemberId);if(m){m.milestones.splice(i,1);renderMilestones(m);}};
+window.addMilestone=function(){
+  const input=document.getElementById('newMilestone'),text=input.value.trim();if(!text)return;
+  const m=members.find(x=>x.id===progressMemberId);if(m){m.milestones.push({text,done:false});renderMilestones(m);input.value='';}
+};
+function renderNotes(m){
+  const list=document.getElementById('noteList');
+  const notes=m.notes||[];
+  if(!notes.length){list.innerHTML='<div style="font-size:0.8rem;color:rgba(245,240,232,0.25);padding:0.4rem 0;">No progress notes yet. Add the first note below.</div>';return;}
+  list.innerHTML=[...notes].reverse().map(n=>`<div class="note-item"><div class="note-date">📅 ${n.date}</div><div class="note-text">${n.text}</div><button class="note-del" onclick="deleteNote(${n.id})" title="Delete note">✕</button></div>`).join('');
+}
+window.addProgressNote=function(){
+  const textarea=document.getElementById('newNoteText'),text=textarea.value.trim();if(!text)return;
+  const m=members.find(x=>x.id===progressMemberId);
+  if(m){m.notes=m.notes||[];m.notes.push({id:Date.now(),date:formatDateTime(),text});renderNotes(m);textarea.value='';}
+};
+window.deleteNote=function(nid){
+  const m=members.find(x=>x.id===progressMemberId);
+  if(m){m.notes=(m.notes||[]).filter(n=>n.id!==nid);renderNotes(m);}
+};
+window.saveProgress=function(){
+  const m=members.find(x=>x.id===progressMemberId);if(!m)return;
+  ['attendance','engagement','growth'].forEach(key=>{const s=document.getElementById('slider-'+key);if(s)m.progress[key]=parseInt(s.value);});
+  renderProgressList();closeProgressModal();showToast('Progress saved.');
+};
+window.closeProgressModal=()=>{document.getElementById('progressModal').classList.remove('open');progressMemberId=null;};
+
+// ── STAFF ──
+let editingStaffId=null,allocatingStaffId=null,allocateTempIds=[];
+function staffRoleStyle(role){const c=SROLE_COLORS[role]||'rgba(150,150,150';return`background:${c},0.12);color:${c},1);border:1px solid ${c},0.25);font-size:0.65rem;padding:0.2rem 0.55rem;letter-spacing:0.1em;text-transform:uppercase;`;}
+function renderStaffStats(){
+  const active=staff.filter(s=>s.status==='active').length;
+  const totalAss=staff.reduce((a,s)=>a+(s.assignedIds||[]).length,0);
+  document.getElementById('staffStats').innerHTML=`<div class="admin-stat"><div class="admin-stat-num stat-c-white">${staff.length}</div><div class="admin-stat-label">Total Staff</div></div><div class="admin-stat"><div class="admin-stat-num" style="color:#4a9eff">${active}</div><div class="admin-stat-label">Active</div></div><div class="admin-stat"><div class="admin-stat-num stat-c-gold">${totalAss}</div><div class="admin-stat-label">Allocated</div></div><div class="admin-stat"><div class="admin-stat-num stat-c-red">${members.length-totalAss}</div><div class="admin-stat-label">Unallocated</div></div>`;
+}
+function renderStaffTable(){
+  const search=(document.getElementById('staffSearch')||{value:''}).value.toLowerCase();
+  const filtered=staff.filter(s=>!search||(s.first+' '+s.last).toLowerCase().includes(search)||s.email.toLowerCase().includes(search));
+  const tb=document.getElementById('staffTableBody');
+  if(!filtered.length){tb.innerHTML='<tr><td colspan="7" style="text-align:center;color:rgba(245,240,232,0.25);padding:2rem;">No staff found.</td></tr>';return;}
+  tb.innerHTML=filtered.map(s=>{
+    const assigned=(s.assignedIds||[]).map(id=>{const m=members.find(x=>x.id===id);return m?`<span class="assigned-pill">${m.first} ${m.last[0]}.</span>`:''}).join('');
+    const cl={elders:'Elders · 30+',rising:'Rising · 18–29',youth:'Young Iron · 7–17',all:'All Circles'}[s.circle]||s.circle;
+    const ct={elders:'bct-men',rising:'bct-young',youth:'bct-youth',all:'bct-general'}[s.circle]||'';
+    return`<tr>
+      <td class="post-title">${s.first} ${s.last}<div style="font-size:0.72rem;color:rgba(245,240,232,0.35);margin-top:0.1rem;">${s.bio?s.bio.slice(0,50)+'…':''}</div></td>
+      <td><span style="${staffRoleStyle(s.role)}">${s.role}</span></td>
+      <td><span class="blog-circle-tag ${ct}" style="font-size:0.62rem;">${cl}</span></td>
+      <td style="color:rgba(245,240,232,0.6)">${s.email}<div style="font-size:0.68rem;color:rgba(245,240,232,0.25);margin-top:0.1rem;">Pass: ${s.pass}</div></td>
+      <td>${assigned||'<span style="color:rgba(245,240,232,0.2);font-size:0.78rem;">None</span>'}</td>
+      <td><span class="status-badge status-${s.status}">${s.status}</span></td>
+      <td><div class="admin-actions">
+        <button class="btn-edit" onclick="openStaffModal(${s.id})">Edit</button>
+        <button class="btn-allocate" onclick="openAllocateModal(${s.id})">Allocate</button>
+        <button class="btn-delete" onclick="promptDelete(${s.id},'${(s.first+' '+s.last).replace(/'/g,"\\'")}','staff')">Delete</button>
+      </div></td></tr>`;
+  }).join('');
+}
+window.openStaffModal=function(sid){
+  editingStaffId=sid||null;
+  ['err-sfFirst','err-sfLast','err-sfEmail','err-sfPass','err-sfRole','err-sfCircle'].forEach(id=>document.getElementById(id)&&(document.getElementById(id).textContent=''));
+  if(editingStaffId){const s=staff.find(x=>x.id===editingStaffId);document.getElementById('sfFirst').value=s.first;document.getElementById('sfLast').value=s.last;document.getElementById('sfEmail').value=s.email;document.getElementById('sfPass').value=s.pass;document.getElementById('sfRole').value=s.role;document.getElementById('sfCircle').value=s.circle;document.getElementById('sfStatus').value=s.status;document.getElementById('sfBio').value=s.bio||'';document.getElementById('staffModalTitle').textContent='Edit Staff Member';document.getElementById('staffSaveBtn').textContent='Save Changes →';}
+  else{['sfFirst','sfLast','sfEmail','sfPass','sfBio'].forEach(id=>document.getElementById(id).value='');document.getElementById('sfRole').value='';document.getElementById('sfCircle').value='';document.getElementById('sfStatus').value='active';document.getElementById('staffModalTitle').textContent='Add Staff / Mentor / Advisor';document.getElementById('staffSaveBtn').textContent='Save →';}
+  document.getElementById('staffModal').classList.add('open');
+};
+window.closeStaffModal=()=>{document.getElementById('staffModal').classList.remove('open');editingStaffId=null;};
+window.saveStaff=function(){
+  const first=document.getElementById('sfFirst').value.trim(),last=document.getElementById('sfLast').value.trim(),
+        email=document.getElementById('sfEmail').value.trim(),pass=document.getElementById('sfPass').value.trim(),
+        role=document.getElementById('sfRole').value,circle=document.getElementById('sfCircle').value,
+        status=document.getElementById('sfStatus').value,bio=document.getElementById('sfBio').value.trim();
+  let ok=true;
+  const errs={sfFirst:'err-sfFirst',sfLast:'err-sfLast',sfEmail:'err-sfEmail',sfPass:'err-sfPass',sfRole:'err-sfRole',sfCircle:'err-sfCircle'};
+  Object.keys(errs).forEach(k=>{const e=document.getElementById(errs[k]);if(e)e.textContent='';});
+  if(!first){document.getElementById('err-sfFirst').textContent='Required.';ok=false;}
+  if(!last){document.getElementById('err-sfLast').textContent='Required.';ok=false;}
+  if(!email){document.getElementById('err-sfEmail').textContent='Required.';ok=false;}
+  if(!pass){document.getElementById('err-sfPass').textContent='Required.';ok=false;}
+  if(!role){document.getElementById('err-sfRole').textContent='Required.';ok=false;}
+  if(!circle){document.getElementById('err-sfCircle').textContent='Required.';ok=false;}
+  if(!ok)return;
+  if(editingStaffId){const i=staff.findIndex(x=>x.id===editingStaffId);if(i>-1)staff[i]=Object.assign({},staff[i],{first,last,email,pass,role,circle,status,bio});showToast('Staff updated.');}
+  else{staff.unshift({id:Date.now(),first,last,email,pass,role,circle,status,bio,assignedIds:[]});showToast('Staff member added.');}
+  renderStaffStats();renderStaffTable();closeStaffModal();
+};
+
+// ── ALLOCATE ──
+window.openAllocateModal=function(sid){
+  allocatingStaffId=sid;
+  const s=staff.find(x=>x.id===sid);if(!s)return;
+  allocateTempIds=(s.assignedIds||[]).slice();
+  document.getElementById('allocateTitle').textContent='Allocate Members to '+s.first+' '+s.last;
+  document.getElementById('allocateSub').textContent=s.role+' · '+({elders:'Elders Circle (30+)',rising:'Rising Circle (18–29)',youth:'Young Iron (7–17)',all:'All Circles'}[s.circle]||s.circle);
+  document.getElementById('allocateSearch').value='';document.getElementById('allocateFilter').value='';
+  renderAllocateList();document.getElementById('allocateModal').classList.add('open');
+};
+window.closeAllocateModal=()=>{document.getElementById('allocateModal').classList.remove('open');allocatingStaffId=null;};
+window.renderAllocateList=function(){
+  const search=(document.getElementById('allocateSearch')||{value:''}).value.toLowerCase();
+  const filter=(document.getElementById('allocateFilter')||{value:''}).value;
+  const filtered=members.filter(m=>(!search||(m.first+' '+m.last).toLowerCase().includes(search))&&(!filter||m.circle===filter));
+  const el=document.getElementById('allocateList');
+  if(!filtered.length){el.innerHTML='<div class="allocate-empty">No members found.</div>';return;}
+  el.innerHTML=filtered.map(m=>{
+    const sel=allocateTempIds.includes(m.id);
+    const assignedTo=staff.find(s=>s.id!==allocatingStaffId&&(s.assignedIds||[]).includes(m.id));
+    const ctag=CMAP[m.circle]||'',cl=CLABEL[m.circle]||m.circle;
+    return`<div class="allocate-item ${sel?'selected':''}" onclick="toggleAllocate(${m.id})">
+      <div class="allocate-check">${sel?'✓':''}</div>
+      <div style="flex:1;">
+        <div class="allocate-item-name">${m.first} ${m.last} <span style="font-size:0.72rem;color:rgba(245,240,232,0.35);">Age ${calcAge(m.dob)}</span></div>
+        <div style="display:flex;gap:0.5rem;align-items:center;margin-top:0.2rem;">
+          <span class="blog-circle-tag ${ctag}" style="font-size:0.6rem;">${cl}</span>
+          ${assignedTo?`<span class="allocate-assigned-badge">Also with ${assignedTo.first}</span>`:''}
+        </div>
+      </div>
+      <span class="allocate-item-meta">${m.status}</span>
+    </div>`;
+  }).join('');
+};
+window.toggleAllocate=id=>{const i=allocateTempIds.indexOf(id);if(i>-1)allocateTempIds.splice(i,1);else allocateTempIds.push(id);renderAllocateList();};
+window.saveAllocations=function(){
+  const s=staff.find(x=>x.id===allocatingStaffId);if(!s)return;
+  s.assignedIds=allocateTempIds.slice();
+  renderStaffStats();renderStaffTable();closeAllocateModal();showToast('Allocations saved for '+s.first+'.');
+};
+
+// ── DELETE ──
+let deletingId=null,deleteMode='post';
+window.promptDelete=(id,label,mode)=>{deletingId=id;deleteMode=mode||'post';document.getElementById('confirmMsg').textContent=`"${label}" will be permanently deleted.`;document.getElementById('confirmOverlay').classList.add('open');};
+window.closeConfirm=()=>{document.getElementById('confirmOverlay').classList.remove('open');deletingId=null;};
+window.confirmDelete=function(){
+  if(deleteMode==='post'){posts=posts.filter(p=>p.id!==deletingId);renderBlog();renderAdminBlogStats();renderAdminBlogTable();showToast('Post deleted.',true);}
+  else if(deleteMode==='member'){members=members.filter(m=>m.id!==deletingId);staff.forEach(s=>{s.assignedIds=(s.assignedIds||[]).filter(id=>id!==deletingId);});renderCrmStats();renderMembersTable();showToast('Member removed.',true);}
+  else if(deleteMode==='staff'){staff=staff.filter(s=>s.id!==deletingId);renderStaffStats();renderStaffTable();showToast('Staff removed.',true);}
+  closeConfirm();
+};
+
+// ── STAFF PORTAL ──
+let loggedInStaff=null;
+window.openStaffPortal=()=>{document.getElementById('staffPortal').classList.add('open');document.body.style.overflow='hidden';if(loggedInStaff)showStaffDash();else showStaffLogin();};
+window.closeStaffPortal=()=>{document.getElementById('staffPortal').classList.remove('open');document.body.style.overflow='';};
+function showStaffLogin(){document.getElementById('staffLogin').style.display='flex';document.getElementById('staffDashboard').classList.remove('visible');document.getElementById('staffLoginEmail').value='';document.getElementById('staffLoginPass').value='';document.getElementById('staffLoginError').textContent='';}
+function showStaffDash(){
+  const s=loggedInStaff;
+  document.getElementById('staffLogin').style.display='none';
+  document.getElementById('staffDashboard').classList.add('visible');
+  document.getElementById('staffWelcome').textContent='Welcome, '+s.first+'!';
+  document.getElementById('staffRoleBadge').textContent=s.role;
+  const cl={elders:'Elders Circle (30+)',rising:'Rising Circle (18–29)',youth:'Young Iron (7–17)',all:'All Circles'}[s.circle]||s.circle;
+  const assigned=(s.assignedIds||[]).map(id=>members.find(m=>m.id===id)).filter(Boolean);
+  document.getElementById('staffProfileCard').innerHTML=`<div class="staff-card-avatar">${s.first[0]}${s.last[0]}</div><div style="flex:1;"><div class="staff-card-name">${s.first} ${s.last}</div><div class="staff-card-meta"><span class="staff-role-badge">${s.role}</span><span style="font-size:0.72rem;color:rgba(245,240,232,0.4);">${cl}</span>${s.bio?`<span style="font-size:0.78rem;color:rgba(245,240,232,0.45);">${s.bio}</span>`:''}</div></div><div style="display:flex;gap:2rem;"><div><div class="admin-stat-num" style="color:#4a9eff;font-family:'Bebas Neue',sans-serif;font-size:2rem;">${assigned.length}</div><div class="admin-stat-label">Assigned</div></div><div><div class="admin-stat-num" style="color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:2rem;">${assigned.filter(m=>m.status==='active').length}</div><div class="admin-stat-label">Active</div></div></div>`;
+  renderStaffMembersTable();
+}
+window.attemptStaffLogin=function(){
+  const email=document.getElementById('staffLoginEmail').value.trim().toLowerCase(),pass=document.getElementById('staffLoginPass').value;
+  const found=staff.find(s=>s.email.toLowerCase()===email&&s.pass===pass&&s.status==='active');
+  if(found){loggedInStaff=found;showStaffDash();}
+  else{document.getElementById('staffLoginError').textContent='Incorrect email or password.';document.getElementById('staffLoginPass').value='';}
+};
+window.staffLogout=()=>{loggedInStaff=null;showStaffLogin();};
+window.renderStaffMembersTable=function(){
+  if(!loggedInStaff)return;
+  const search=(document.getElementById('staffMemberSearch')||{value:''}).value.toLowerCase();
+  const assigned=(loggedInStaff.assignedIds||[]).map(id=>members.find(m=>m.id===id)).filter(Boolean);
+  const filtered=assigned.filter(m=>!search||(m.first+' '+m.last).toLowerCase().includes(search));
+  const c={total:assigned.length,active:assigned.filter(m=>m.status==='active').length,pending:assigned.filter(m=>m.status==='pending').length};
+  document.getElementById('staffMemberStats').innerHTML=`<div class="admin-stat"><div class="admin-stat-num" style="color:#4a9eff">${c.total}</div><div class="admin-stat-label">Assigned</div></div><div class="admin-stat"><div class="admin-stat-num stat-c-gold">${c.active}</div><div class="admin-stat-label">Active</div></div><div class="admin-stat"><div class="admin-stat-num stat-c-white">${c.pending}</div><div class="admin-stat-label">Pending</div></div><div class="admin-stat"><div class="admin-stat-num stat-c-red">${assigned.reduce((a,m)=>a+(m.milestones||[]).filter(x=>x.done).length,0)}</div><div class="admin-stat-label">Milestones Done</div></div>`;
+  const tb=document.getElementById('staffMembersBody');
+  if(!filtered.length){tb.innerHTML='<tr><td colspan="9" style="text-align:center;color:rgba(245,240,232,0.25);padding:2rem;">No members assigned to you yet.</td></tr>';return;}
+  tb.innerHTML=filtered.map(m=>{
+    const p=m.progress||{attendance:0,engagement:0,growth:0};
+    const avg=Math.round((p.attendance+p.engagement+p.growth)/3);
+    const fill=PFILLS[m.circle]||'fill-gold';
+    const lastNote=(m.notes||[]).length?m.notes[m.notes.length-1]:'';
+    return`<tr>
+      <td class="post-title">${m.first} ${m.last}</td>
+      <td style="white-space:nowrap;font-size:0.82rem;">${formatDob(m.dob)}<div style="font-size:0.7rem;color:rgba(245,240,232,0.35);">Age ${calcAge(m.dob)}</div></td>
+      <td><span class="blog-circle-tag ${CMAP[m.circle]||''}" style="font-size:0.62rem;">${CLABEL[m.circle]||m.circle}</span></td>
+      <td><a href="mailto:${m.email}" style="color:rgba(245,240,232,0.6);text-decoration:none;">${m.email}</a></td>
+      <td style="color:rgba(245,240,232,0.5)">${m.phone||'—'}</td>
+      <td><span class="status-badge status-${m.status}">${m.status}</span></td>
+      <td><div style="display:flex;align-items:center;gap:0.6rem;min-width:110px;"><div class="mini-bar-track" style="flex:1;"><div class="mini-bar-fill ${fill}" style="width:${avg}%"></div></div><span style="font-size:0.72rem;color:rgba(245,240,232,0.5);">${avg}%</span></div></td>
+      <td style="max-width:160px;"><div style="font-size:0.75rem;color:rgba(245,240,232,0.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${lastNote?lastNote.text.slice(0,60)+'…':'—'}</div>${lastNote?`<div style="font-size:0.65rem;color:rgba(245,240,232,0.25);margin-top:0.1rem;">${lastNote.date}</div>`:''}</td>
+      <td><button class="progress-edit-btn" onclick="staffOpenProgress(${m.id})">Progress →</button></td>
+    </tr>`;
+  }).join('');
+};
+
+// Staff can also open progress modal (read/write notes)
+window.staffOpenProgress=function(id){
+  openProgressModal(id);
+  // After save, refresh staff table too
+  const origSave=window.saveProgress;
+  window.saveProgress=function(){origSave();renderStaffMembersTable();window.saveProgress=origSave;};
+};
+
+// ── TOAST ──
+let toastTimer;
+function showToast(msg,red){const t=document.getElementById('adminToast');t.textContent=msg;t.className='admin-toast show'+(red?' toast-red':'');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3200);}
+
+})();
+</script>
+</body>
+</html>
