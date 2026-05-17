@@ -555,12 +555,13 @@ input[type=range].progress-slider::-webkit-slider-thumb{-webkit-appearance:none;
       <div class="card-accent-line card-accent"></div>
       <div class="card-age">7–17 · The Young Iron Circle</div>
       <h2 class="card-title">Boys Becoming Men</h2>
-      <p class="card-desc">Young Iron gives boys aged 7–17 a safe space to learn what it means to be a man — through sport, character, respect, and positive role models.</p>
+      <p class="card-desc">Young Iron gives boys aged 7–17 a safe space to learn what it means to be a man — through sport, character, respect, positive role models, and active parent partnership.</p>
       <div class="journey-ribbon"><div class="ribbon-track" id="ribbonYouth"></div></div>
       <ul class="card-features">
         <li>Character & values programmes</li><li>Sport & physical development</li>
         <li>Confidence & communication skills</li><li>Anti-bullying & resilience training</li>
         <li>Mentorship from Rising & Elders</li>
+        <li>Parent partnership & engagement</li>
       </ul>
       <button class="card-btn" onclick="jumpToJoin('youth')">Build the Foundation →</button>
       <div class="card-num">7+</div>
@@ -599,7 +600,7 @@ input[type=range].progress-slider::-webkit-slider-thumb{-webkit-appearance:none;
     <div class="event-card reveal"><span class="event-tag tag-youth">Young Iron · 7–17</span><h3>Saturday Morning Warriors</h3><p>Weekly physical training, team challenges, and character-building for young men aged 7–17.</p><div class="event-meta"><span>📅 Every Saturday</span><span>🕢 7:30 AM</span><span>Open to all</span></div></div>
     <div class="event-card reveal"><span class="event-tag tag-men">Elders Circle · 30+</span><h3>The Iron Brotherhood Circle</h3><p>Our weekly safe space for men to speak truth, be heard, and support one another.</p><div class="event-meta"><span>📅 Every Tuesday</span><span>🕢 7:30 PM</span><span>Weekly</span></div></div>
     <div class="event-card reveal"><span class="event-tag tag-young">Rising Circle · 18–29</span><h3>Fitness & Discipline Bootcamp</h3><p>Monthly outdoor bootcamp combining physical conditioning with mental resilience challenges.</p><div class="event-meta"><span>📅 Fri 30 May</span><span>🕔 5:00 AM</span><span>All levels</span></div></div>
-    <div class="event-card reveal"><span class="event-tag tag-youth">Young Iron · 7–17</span><h3>Mentorship Matchup Day</h3><p>Youth meet their Elders and Rising mentors for a day of activities and connection.</p><div class="event-meta"><span>📅 Sun 1 Jun</span><span>🕙 10:00 AM</span><span>Free entry</span></div></div>
+    <div class="event-card reveal"><span class="event-tag tag-youth">Young Iron · 7–17</span><h3>Mentorship Matchup Day</h3><p>Youth, parents, and mentors come together for a day of activities and connection.</p><div class="event-meta"><span>📅 Sun 1 Jun</span><span>🕙 10:00 AM</span><span>Free entry</span></div></div>
   </div>
 </section>
 
@@ -663,6 +664,7 @@ input[type=range].progress-slider::-webkit-slider-thumb{-webkit-appearance:none;
                 <div class="circle-option" data-circle="rising" onclick="selectCircle(this)"><div class="circle-option-age co-red">18–29</div><div class="circle-option-name">Rising Circle</div><div class="circle-option-desc">Men in the Making</div></div>
                 <div class="circle-option" data-circle="youth" onclick="selectCircle(this)"><div class="circle-option-age co-blue">7–17</div><div class="circle-option-name">Young Iron</div><div class="circle-option-desc">Boys Becoming Men</div></div>
               </div>
+              <div id="youthGuardianHint" class="hidden" style="font-size:0.78rem;color:rgba(245,240,232,0.7);background:rgba(74,158,255,0.08);border:1px solid rgba(74,158,255,0.22);padding:0.7rem 0.9rem;margin-top:0.6rem;line-height:1.5;">For under-18s, please have a parent or guardian complete this form on the young man's behalf.</div>
             </div>
             <div class="form-group"><label class="form-label">Your Message <span class="req">*</span></label><textarea class="form-input form-textarea" id="message" placeholder="Tell us what brought you here and what you're hoping to get from Iron Circle..."></textarea><span class="field-error" id="err-message"></span></div>
           </div>
@@ -1067,6 +1069,7 @@ window.selectCircle=function(el){
   selectedCircle=el.dataset.circle;
   el.classList.add(selectedCircle==='elders'?'selected-elders':selectedCircle==='rising'?'selected-rising':'selected-youth');
   const e=document.getElementById('err-circle');if(e)e.textContent='';
+  const hint=document.getElementById('youthGuardianHint');if(hint)hint.classList.toggle('hidden',selectedCircle!=='youth');
 };
 window.jumpToJoin=function(circle){document.getElementById('contact').scrollIntoView({behavior:'smooth'});setTimeout(function(){var el=document.querySelector('.circle-option[data-circle="'+circle+'"]');if(el)selectCircle(el);},600);};
 window.submitJoinForm=function(){
